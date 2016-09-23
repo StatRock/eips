@@ -1,156 +1,146 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.3"></script>
-      <script type="text/javascript">
-         var map;
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript"
+          src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.3"></script>
+  <script type="text/javascript">
+    var map;
 
-         function OnPageLoad()
-         {
-            map = new VEMap('myMap');
-            map.LoadMap();
-			// add find control
-			map.ShowFindControl();
-			// A disambiguation dialog
-			map.ShowDisambiguationDialog(false);
-			// replace the call to ShowFindControl with call to Find,
-			map.Find("", ",idaho falls,idaho");
-			//
-			//create a pushpin
+    function OnPageLoad() {
+      map = new VEMap('myMap');
+      map.LoadMap();
+      // add find control
+      map.ShowFindControl();
+      // A disambiguation dialog
+      map.ShowDisambiguationDialog(false);
+      // replace the call to ShowFindControl with call to Find,
+      map.Find("", ",idaho falls,idaho");
+      //
+      //create a pushpin
 
- var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.43388, -112.121));
-pin.SetTitle("Barn");
-pin.SetDescription("45th South");
-map.AddShape(pin);
+      var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.43388, -112.121));
+      pin.SetTitle("Barn");
+      pin.SetDescription("45th South");
+      map.AddShape(pin);
 
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.43361, -112.04333));
-pin.SetTitle("Barn");
-pin.SetDescription("5th west #1");
-map.AddShape(pin);
-
-
-			
-			var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.444166, -112.04333));
-pin.SetTitle("Barn");
-pin.SetDescription("5th west #2");
-map.AddShape(pin);
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.44583, -112.04333));
-pin.SetTitle("Barn ");
-pin.SetDescription("5th west #3");
-map.AddShape(pin);
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.45333, -112.04333));
-pin.SetTitle("Barn");
-pin.SetDescription("5th west #4");
-map.AddShape(pin);
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.43916, -112.042222));
-pin.SetTitle("Barn");
-pin.SetDescription("65th South #1");
-map.AddShape(pin);
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.4394444, -112.0225));
-pin.SetTitle("Barn");
-pin.SetDescription("65th South #2");
-map.AddShape(pin);
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.435347, -112.026833));
-pin.SetTitle("Barn");
-pin.SetDescription("65th South #3");
-map.AddShape(pin);
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.482222, -112.09694));
-pin.SetTitle("Barn");
-pin.SetDescription(" Mill Road #1");
-map.AddShape(pin);
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.482222, -112.0997));
-pin.SetTitle("Barn");
-pin.SetDescription("Mill Road #2");
-map.AddShape(pin);
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.43361, -112.04333));
+      pin.SetTitle("Barn");
+      pin.SetDescription("5th west #1");
+      map.AddShape(pin);
 
 
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.439603, -112.135361));
-pin.SetTitle("Barn");
-pin.SetDescription("ST. John Road or W65 South");
-map.AddShape(pin);
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.444166, -112.04333));
+      pin.SetTitle("Barn");
+      pin.SetDescription("5th west #2");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.44583, -112.04333));
+      pin.SetTitle("Barn ");
+      pin.SetDescription("5th west #3");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.45333, -112.04333));
+      pin.SetTitle("Barn");
+      pin.SetDescription("5th west #4");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.43916, -112.042222));
+      pin.SetTitle("Barn");
+      pin.SetDescription("65th South #1");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.4394444, -112.0225));
+      pin.SetTitle("Barn");
+      pin.SetDescription("65th South #2");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.435347, -112.026833));
+      pin.SetTitle("Barn");
+      pin.SetDescription("65th South #3");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.482222, -112.09694));
+      pin.SetTitle("Barn");
+      pin.SetDescription(" Mill Road #1");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.482222, -112.0997));
+      pin.SetTitle("Barn");
+      pin.SetDescription("Mill Road #2");
+      map.AddShape(pin);
 
 
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.456388, -112.10027));
-pin.SetTitle("Barn");
-pin.SetDescription("New Sweden School Road/ S 35th W #1");
-map.AddShape(pin);
-
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.4922, -112.10027));
-pin.SetTitle("Barn");
-pin.SetDescription("New Sweden School Road/ S 35th W #2");
-map.AddShape(pin);
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.439603, -112.135361));
+      pin.SetTitle("Barn");
+      pin.SetDescription("ST. John Road or W65 South");
+      map.AddShape(pin);
 
 
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.456388, -112.10027));
+      pin.SetTitle("Barn");
+      pin.SetDescription("New Sweden School Road/ S 35th W #1");
+      map.AddShape(pin);
 
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.4308, -112.103));
-pin.SetTitle("Barn");
-pin.SetDescription("New Sweden School Road/ S 35th W #3");
-map.AddShape(pin);
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.4922, -112.10027));
+      pin.SetTitle("Barn");
+      pin.SetDescription("New Sweden School Road/ S 35th W #2");
+      map.AddShape(pin);
 
 
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.471624, -112.073958));
-pin.SetTitle("Barn");
-pin.SetDescription("S Pioneer Lane");
-map.AddShape(pin);
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.4308, -112.103));
+      pin.SetTitle("Barn");
+      pin.SetDescription("New Sweden School Road/ S 35th W #3");
+      map.AddShape(pin);
 
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.42666, -112.14305));
-pin.SetTitle("Barn");
-pin.SetDescription("South 55th W#1");
-map.AddShape(pin);
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.42972, -112.142777));
-pin.SetTitle("Barn");
-pin.SetDescription("South 55th W#2");
-map.AddShape(pin);
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.45777, -112.14777));
-pin.SetTitle("Barn");
-pin.SetDescription("South 55th W#3");
-map.AddShape(pin);
 
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.46416, -112.023611));
-pin.SetTitle("Barn");
-pin.SetDescription("South Holmes #1");
-map.AddShape(pin);
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.471624, -112.073958));
+      pin.SetTitle("Barn");
+      pin.SetDescription("S Pioneer Lane");
+      map.AddShape(pin);
 
-var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.445555, -112.023611));
-pin.SetTitle("Barn");
-pin.SetDescription("South Holmes #2");
-map.AddShape(pin);
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.42666, -112.14305));
+      pin.SetTitle("Barn");
+      pin.SetDescription("South 55th W#1");
+      map.AddShape(pin);
 
-  var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.4625,-112.015125));
-pin.SetTitle("Barn");
-pin.SetDescription("East Kinswood Street");
-map.AddShape(pin);
-{
- 
- 			
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.42972, -112.142777));
+      pin.SetTitle("Barn");
+      pin.SetDescription("South 55th W#2");
+      map.AddShape(pin);
 
-  
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.45777, -112.14777));
+      pin.SetTitle("Barn");
+      pin.SetDescription("South 55th W#3");
+      map.AddShape(pin);
 
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.46416, -112.023611));
+      pin.SetTitle("Barn");
+      pin.SetDescription("South Holmes #1");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.445555, -112.023611));
+      pin.SetTitle("Barn");
+      pin.SetDescription("South Holmes #2");
+      map.AddShape(pin);
+
+      pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.4625, -112.015125));
+      pin.SetTitle("Barn");
+      pin.SetDescription("East Kinswood Street");
+      map.AddShape(pin);
+      {
 // Set up a callback method
-function Callback(shape, results, places, hasmore)
-{
-  //do something with returned information
-  
-}
-}
-         }
-      </script>
-   </head>
-   <body style="position:absolute;width:100%;height:100%" 
-         onload="OnPageLoad();">
-      <div id="myMap"
-          style="position:relative;width:1000px;height:750px;"></div>
-          
-   
-</div>
-   </body>
+        function Callback(shape, results, places, hasmore) {
+          //do something with returned information
+
+        }
+      }
+    }
+  </script>
+</head>
+<body style="position:absolute;width:100%;height:100%" onload="OnPageLoad();">
+<div id="myMap" style="position:relative;width:1000px;height:750px;"></div>
+
+</body>
 </html>
