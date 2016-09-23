@@ -59,3 +59,16 @@ a:hover, a:active {
   color: #191970;
   background-color: #C9C3ED;
 }
+
+.layout-grid,
+.photo-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.layout-grid li,
+.photo-grid li {
+  padding: 10px;
+}
