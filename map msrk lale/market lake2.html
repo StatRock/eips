@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.3"></script>
+      <script type="text/javascript">
+         var map;
+
+         function OnPageLoad()
+         {
+            map = new VEMap('myMap');
+            map.LoadMap();
+			// add find control
+			map.ShowFindControl();
+			// A disambiguation dialog
+			map.ShowDisambiguationDialog(false);
+			// replace the call to ShowFindControl with call to Find,
+			map.Find("", ",idaho falls,idaho");
+			//
+			//create a pushpin
+
+ var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.496439, -112.053008));
+pin.SetTitle("15 and 20  Idaho Falls");
+pin.SetDescription(" 15 Idaho Falls");
+map.AddShape(pin);
+
+var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.715775, -112.132319));
+pin.SetTitle("Roberts Exit I 15 ");
+pin.SetDescription("Ro1berts, Idaho");
+map.AddShape(pin);
+
+
+			
+			var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.716975, -112.126486));
+pin.SetTitle("Roberts Idaho and Hwy 48");
+pin.SetDescription("Hwy 48 in Roberts");
+map.AddShape(pin);
+
+var pin = new VEShape(VEShapeType.Pushpin, new VELatLong(43.764253, -112.137972));
+pin.SetTitle("Sandy Marsh Parking Area ");
+pin.SetDescription("N 2850 E, Roberts, Idaho"); ;
+
+		 }
+ 
+ 			
+
+  
+
+// Set up a callback method
+function Callback(shape, results, places, hasmore)
+{
+  //do something with returned information
+  
+}
+
+         
+      </script>
+   </head>
+   <body style="position:absolute;width:100%;height:100%" 
+         onload="OnPageLoad();">
+      <div id="myMap"
+          style="position:relative;width:1000px;height:750px;"></div>
+          
+   
+</div>
+   </body>
+</html>
