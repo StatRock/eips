@@ -4,7 +4,7 @@
   min-width: 120px;
   margin: 0 210px 20px 170px;
   border: 1px solid black;
-  background-color: #66CCFF;
+  /*background-color: #66CCFF;*/
   /*problem with backgroung color body */
   padding: 10px;
   z-index: 3;
@@ -13,7 +13,7 @@ img {
    padding:1px;
    border:1px solid #021a40;
 }
-#navleft {
+#nav-left {
   position: absolute;
   width: 128px;
   top: 20px;
@@ -24,12 +24,12 @@ img {
   padding: 10px;
   z-index: 2;
 }
-#navleft ul {
+#nav-left ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-#navright {
+#nav-right {
   position: absolute;
   width: 275px;
   top: 20px;
@@ -71,4 +71,10 @@ a:hover, a:active {
 .layout-grid li,
 .photo-grid li {
   padding: 10px;
+}
+
+#content, #header, #nav-bottom,
+.content {
+  margin: auto;
+  text-align: center;
 }
