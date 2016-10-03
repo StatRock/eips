@@ -36,6 +36,7 @@
            (sift :to-asset (extensions-match ".xml" ".thmx"))
            (sift :to-asset (extensions-match ".pdf" ".docx?" ".pptx?"))
            (sift :to-asset (extensions-match ".css"))
+           (sift :to-asset (extensions-match ".js"))
            (markdown)
            (html/html-fragments)
            #_(print-meta)
