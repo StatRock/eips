@@ -1,6 +1,6 @@
 (ns site.core
   (:require [hiccup.page :as hp]
-            [io.perun.core :as perun]
+            [selmer.parser :as selmer]
             [boot.util :as u]
             [clojure.set :as set]))
 
@@ -28,9 +28,7 @@
 (defn template [data]
   (enforce-has-keys data required-yaml-keys)
   (enforce-only-permitted-keys data permitted-default-template-keys)
-  (hp/html5
-    [:div
-     (:content data)]))
+  (selmer/render-file "basic_template.html_template" data))
 
 (defn no-template [data]
   (enforce-only-permitted-keys data (set/union perun-keys #{:template}))
