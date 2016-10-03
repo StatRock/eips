@@ -7,7 +7,8 @@
 (def perun-keys #{:content :extension :file-type
                 :filename :full-path :mime-type
                 :original :parent-path :path :short-filename})
-(def known-yaml-keys #{:style :title})
+(def known-yaml-keys #{:styles :title :nav-right-select
+                       :header-image :style-sheet :no-right-matter})
 
 (def required-yaml-keys  #{:title})
 
@@ -22,7 +23,7 @@
 (defn enforce-only-permitted-keys [data permitted]
   (let [unexpected-keys (set/difference (set (keys data)) permitted)]
     (if-not (empty? unexpected-keys)
-      (u/fail (str "Encountered unknown metadata keys in '" (:path data) "': " unexpected-keys)))))
+      (u/fail (str "Encountered unknown metadata keys in '" (:path data) "': " unexpected-keys "\n")))))
 
 (defn template [data]
   (enforce-has-keys data required-yaml-keys)
@@ -36,6 +37,6 @@
   (:content data))
 
 (defn page [{data :entry}]
-  (clojure.pprint/pprint data)
-  (case (or (:template data) :default)
+  (case (or (keyword (:template data)) :default)
+    :none (no-template data)
     :default (template data)))
