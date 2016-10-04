@@ -1,6 +1,5 @@
 (set-env!
- :source-paths #{"src" "content"}
- :resource-paths #{"resources"}
+ :source-paths #{"src" "content" "templates"}
  :dependencies '[[perun "0.4.0-SNAPSHOT"]
                  [hiccup "1.0.5"]
                  [pandeiro/boot-http "0.7.0"]
@@ -13,27 +12,22 @@
          '[pandeiro.boot-http :as http]
          '[adzerk.boot-reload :refer [reload]]
          '[site.html-fragment :as html]
+         '[site.advancements :refer [advancements]]
          '[boot.core :as boot :refer [deftask]]
          '[deraen.boot-livereload :as lr])
 
 (defn extensions-match [& extensions]
   (map #(re-pattern (str "(?i)" % #"\Z")) extensions))
 
-(deftask advancements
-         "handles processing of the advancement images and templates"
-         [])
-
-
-
 (deftask render-website
          "does the rendering of the website"
          []
          (comp
            #_(base)
-           #_(add-extension)
+           #_(watermark)
            #_(advancements)
-           (sift :to-asset (extensions-match "jpe?g" ".png" ".gif" ".svg" ".bmp" ".tiff?"))
            (sift :to-asset (extensions-match ".xml" ".thmx"))
+           (sift :to-asset (extensions-match ".jpe?g" ".png" ".gif" ".svg" ".bmp" ".tiff?"))
            (sift :to-asset (extensions-match ".pdf" ".docx?" ".pptx?"))
            (sift :to-asset (extensions-match ".css"))
            (sift :to-asset (extensions-match ".js"))

@@ -16,7 +16,7 @@
   <tr>
     <td align="center">
       <br>
-      <a href="../images/{{image_name}}.jpg"><img src="../images/{{image_name}}.jpg" border=0></a><br>
+      <a href="../images/{{name}}.jpg"><img src="../images/{{name}}.jpg" border=0></a><br>
     </td>
   </tr>
 </table>

@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>{{advancement_title}}</title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="/corpstyle.css"/>
+</head>
+<body bgcolor="#FFFFFF">
+  <div align="center">
+    <h2>{{title}}</h2>
+    <ul class="layout-grid">
+      {% for image in images &}
+        <li><a href="pages/{{image.name}}.html"><img src="thumbnails/{{image.name}}.jpg" border="0"></a></li>
+      {% endfor %}
+    </ul>
+    <div>
+      Photographs Copyright© Photographer, Owner, or Eastern Idaho Photographic Society. Photographs
+      may not be reproduced in any manner without written permission.
+      Web Page Copyright© 2011 Eastern Idaho Photographic Society
+    </div>
+  </div>
+</body>
+</html>
