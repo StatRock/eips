@@ -63,8 +63,8 @@
         <a href="/blm_forest_nat_parks/park_forest_blm.html">Monument and Reserve</a>|
         <a href="/blm_forest_nat_parks/blm.html">Bureau of Land Management</a>|
         <a href="/blm_forest_nat_parks/park_forest_blm.html">National Forests</a>|
-        <a href="/ghost_town.html"> Near By Ghost Towns</a>|
-        <a href="/refuges.html"> Near By Wildlife Refuges</a>|
+        <a href="/ghost_town.html">Near By Ghost Towns</a>|
+        <a href="/refuges.html">Near By Wildlife Refuges</a>|
         <a href="/weather.html">Weather</a>|
         <a href="http://www.usno.navy.mil/data/docs/RS_OneYear.php">Sunrise/Sunset Times</a>|
         <a href="/photographer_link.html">Photographers/Photo Clubs</a></p>
@@ -100,13 +100,13 @@
   {% if not no-right-matter %}
   <div id="nav-right">
     <div class="visible" data-name="riverssm">
-      <h2> Best of Show October Show 2012</h2>
+      <h2>Best of Show October Show 2012</h2>
       <h2><span class="style3"> Eastern Idaho Photographic Society's October 2012 Juried Show</span></h2>
       <p class="img"><img src="/web page images/Inverness Riverssm.png" width="400" height="253" alt="Inverness River"></p>
       <p>&copy; Michael Fryer</p>
     </div>
     <div>
-      <h2> First Place October Show 2003</h2>
+      <h2>First Place October Show 2003</h2>
       <p><span class="style3">Eastern Idaho Photographic Society's October 2003 Juried Show</span></p>
       <p><span class="style3"><img src="/web page images/lisasunfl.jpg" alt="first place" width="142" height="216" /></span></p>
       <p>&copy; Lisa Stephens</p>
