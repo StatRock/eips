@@ -94,7 +94,7 @@
     <li><a href="/if%20mag%20contest.html">Idaho Falls Magazine Contest</a></li>
     <li><a href="/show_main.html">Shows</a></li>
     <li><a href="/earth_day.html">Earth Day</a></li>
-    <li> <a href="mailto:eips@eips.net">Contact</a></li>
+    <li><a href="mailto:eips@eips.net">Contact</a></li>
   </ul>
   </div>
   {% if not no-right-matter %}
@@ -148,7 +148,7 @@
     </div>
     <div>
       <p><span class="style3"> Waterfall Along Columbia River.</span></p>
-      <p><span class="style3"> &copy; John Beach </span> </p>
+      <p><span class="style3"> &copy; John Beach </span></p>
       <p><img src="/linkimages/john_waterfall.jpg" alt="john_waterfall" width="346" height="226" /></p>
       <p>&nbsp;</p>
     </div>
