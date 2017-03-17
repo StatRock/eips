@@ -6,7 +6,8 @@
 
 (def perun-keys #{:content :extension :file-type
                 :filename :full-path :mime-type
-                :original :parent-path :path :short-filename})
+                :original :parent-path :path :short-filename
+                  :slug :permalink :out-dir :original-path :io.perun/trace})
 (def known-yaml-keys #{:styles :title :nav-right-select
                        :header-image :style-sheet :no-right-matter})
 

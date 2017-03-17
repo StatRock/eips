@@ -1,6 +1,6 @@
 (set-env!
  :source-paths #{"src" "content" "templates"}
- :dependencies '[[perun "0.4.0-SNAPSHOT"]
+ :dependencies '[[perun "0.4.2-SNAPSHOT"]
                  [hiccup "1.0.5"]
                  [pandeiro/boot-http "0.7.0"]
                  [adzerk/boot-reload "0.4.12"]
@@ -11,7 +11,6 @@
 (require '[io.perun :refer :all]
          '[pandeiro.boot-http :as http]
          '[adzerk.boot-reload :refer [reload]]
-         '[site.html-fragment :as html]
          '[site.advancements :refer [advancements]]
          '[boot.core :as boot :refer [deftask]]
          '[deraen.boot-livereload :as lr])
@@ -31,8 +30,8 @@
            (sift :to-asset (extensions-match ".pdf" ".docx?" ".pptx?"))
            (sift :to-asset (extensions-match ".css"))
            (sift :to-asset (extensions-match ".js"))
+           (yaml-metadata :extensions [".html" ".htm"])
            (markdown)
-           (html/html-fragments)
            #_(print-meta)
            (render :renderer 'site.core/page :out-dir "")))
 
