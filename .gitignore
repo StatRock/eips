@@ -1,7 +1,37 @@
-target/
+# you might want to look at https://github.com/github/gitignore
+# for common files to ignore.  Specifically Mac or Linus os files.
+
+# output files and boot dependencies
+/target/
+/public/
+/lib/
+/classes/
+/checkouts/
 .boot/
-.nrepl-port
-project.clj
+*.jar
+
+# intellij configuration.
 boot-project.iml
-public/
+
+# leinigen maven and java components
+project.clj
+pom.xml
+pom.xml.asc
+*.war
+.lein-*
+/hs_err_pid*.log
+
+# nrepl
+.nrepl-*
+.repl-*
+
+# Windows thumbnail cache files
 Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Windows folder config file
+Desktop.ini
+
+# OSX
+.DS_Store
