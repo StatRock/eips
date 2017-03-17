@@ -4,3 +4,4 @@ target/
 project.clj
 boot-project.iml
 public/
+Thumbs.db
