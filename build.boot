@@ -15,14 +15,21 @@
          '[boot.core :as boot :refer [deftask]]
          '[deraen.boot-livereload :as lr])
 
-(defn extensions-match [& extensions]
+(defn extensions-match
+  "Matchs extensions based on case insensitive Java regular expressions that must match
+  the entire extension.
+
+  See http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html"
+  [& extensions]
   (map #(re-pattern (str "(?i)" % #"\Z")) extensions))
 
 (deftask render-website
-         "does the rendering of the website"
+         "Handles default rendering of the EIPS website."
          []
          (comp
-           #_(base)
+           (mime-type)
+           (build-date)
+           ; render 404
            #_(watermark)
            #_(advancements)
            (sift :to-asset (extensions-match ".xml" ".thmx"))
@@ -51,11 +58,11 @@
 
 
 (deftask dev
-         "live watch of the built website."
+         "live watch of the built website.  Useful to see the results of changes in development."
          []
          (comp
            (watch :verbose true)
            (render-website)                                 ;for cljs
            #_(reload)
-           (lr/livereload)
+           (lr/livereload)                                  ; doesn't actually reload right now.
            (http/serve :resource-root "")))

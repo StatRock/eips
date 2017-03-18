@@ -1,0 +1,154 @@
+This is the source code for the Eastern Idaho Photography Society's website.
+It includes fragments of websites stored in content which are rendered using
+[Perun](https://github.com/hashobject/perun), [Boot](https://github.com/boot-clj/boot),
+and [Selmer](https://github.com/yogthos/Selmer).
+
+## Use
+
+For first time setup, see [below](#Setup).
+
+The build is controlled by [build.boot](./build.boot) which includes the following tasks:
+
+  * `build` - Processes the source code and places the output in the `public` directory.
+  * `deploy` - (in progress) Executes build, and publishes the results to the web.
+  * `dev` - Processes the source code and hosts it on a local web server.  It will also track built
+    built files and rebuild for any changes.  (Though it does not track changes to build.boot).  
+    Press `Ctrl-C` to stop this.
+
+These tasks can be executed from the root project directory with `boot {taskname}`.  For instance, 
+you would use `boot dev` to start the dev watcher.  This will then print a http link (it will
+look like `Started Jetty on http://localhost:3000`) after which you can browse to 
+[http://localhost:3000](http://localhost:3000) to see a local version of the website.  
+(It may take a while to reach this point, and will print out reams of details about 
+what it is doing.)  Similarly, `boot build` will get it put the results in the build directory.
+
+### Making Changes
+
+Changes to this project are managed using the [git](https://git-scm.com/) version control system.  
+This means that there is a record of changes to this website and previous versions of the website
+can be checked out and viewed by anyone with a copy of the git repository.  This can be very
+useful when you realize that you have made a mistake, or wonder how something used to be done.
+Once you are satisfied with a change, be sure to commit it to the repository.  First you will have
+to stage the changed files with `git add {list of changed files}`.  Then you can create a commit
+with `git commit`.  This will cause a text editor to open so that you can write a description and
+explanation of your changes.  This description is critical when trying to understand the history,
+so make sure to explain what is happening.
+
+You may also want a better tutorial on Git.  For beginners I will recommend 
+[this](https://www.cloudways.com/blog/git-tutorial-for-beginners-version-control/).  You might also
+appreciate [this](https://www.udacity.com/course/how-to-use-git-and-github--ud775) and
+[this](https://www.codecademy.com/learn/learn-git).  There is, of course, also the tradition of
+reading the [documentation](https://git-scm.com/documentation), which includes a 
+[tutorial](https://git-scm.com/docs/gittutorial).
+
+It would also be remiss of me to not mention some of the excellent graphical interfaces for git,
+such as, [SourceTree](https://www.sourcetreeapp.com/), [Github Desktop](https://desktop.github.com/),
+and [TortoiseGit](https://tortoisegit.org/).  You can find more on the 
+[Git website](https://git-scm.com/downloads/guis/).
+
+### Deployment
+
+Once you are happy with the website as it appears on your system, you might want to deploy it.
+First, you will need to get the credentials as described [below](#Setup-for-Deployment).
+<<details of deployment go here, once they exist.>>
+
+
+## How It Works
+
+Perun is a static site generator based on the boot build tool.  Perun contains tasks which are
+useful for generating a static HTML website.  We are using these tools, along with the Selmer
+temperating engine to generate plain HTML files which are then uploaded to the web server over SFTP.
+
+We also have a small amount of custom logic used to generate the advancement pages, and error proof
+web fragments.  This logic is written in [Clojure](https://clojure.org/), and intentionally minimal.
+
+The details for processing are described in the render-website task. sift means to copy files, so,
+sifting to-asset means that that file will appear on the website.  
+[Markdown](https://daringfireball.net/projects/markdown/syntax) and HTML files will be processed,
+and rendered as described by site.core/page.  They are expected to contain [YAML](http://yaml.org/)
+front matter, much like that used [elsewhere](http://assemble.io/docs/YAML-front-matter.html).  This
+YAML front matter is documented in site.core/known-yaml-keys.
+
+### Directory Structure
+
+The project has the following directory structure:
+
+* content - contains the specific contents of the various web pages without any of the stuff the
+  templates add.
+  * advancements - contains the full sized images and a manifest for each advancement project (in independent directories).  The advancement pages are generated automatically from these images
+    and information in the manifest.
+  * js - Contains javascript files used for dynamic functionality on pages.
+  
+    Right now, this only includes the javascript which selects the sidebar image to display.
+  * index.html - This is the root page for the website.
+* public - contains the finished renderings of the website after boot builds them.
+* src - contains rendering instructions as well as the logic for generation of the Advancements pages
+* target - contains compiled 
+* templates - contains the Selmer templates used to render various parts of the website.  Common, 
+  shared content can be found in these templates.
+* .gitignore - contains a list of files which should not be included in the source repository.
+  These files will not have their histories tracked and will not propigate from one computer to
+  another during git cloning.  Many of these files are incidental.
+* build.boot - this controls the build process and defines the build tasks.  If a build task doesn't
+  work, look here first.
+  
+## A Note on Markdown
+
+You might have noticed that this is a Markdown file, and that this website supports Markdown.  I
+would suggest that you use it, after all, it is simple and it allows you to focus exclusively on 
+the content.  However many people like the apparent simplicity of WYSIWYG (what you see is what
+you get) editors.  First, I will briefly observe that in something like Markdown, you always see what is
+going on.  There can't be any invisible formatting commands, because all formatting commands *must*
+be visible, after all, they are also just text.  Next, I will direct you to some tools to help out.  
+
+First, most modern text editors like [atom](https://atom.io/), 
+[scrivener](https://www.literatureandlatte.com/scrivener.php), 
+[emacs](https://www.gnu.org/software/emacs/) or [Sublime Text](https://www.sublimetext.com/) either
+support or have plugins that support markdown.  Many of these plugins even include a preview
+function (not that you really need tool support to edit markdown).  Also, most web authoring tools,
+and platforms (such as WordPress) support Markdown as well.
+
+Second, I will note that there are many excellent tools for markdown editing itself, including
+some WYSIWYGs.  Here is a nice [sampling](https://github.com/karthik/markdown_science/wiki/Tools-to-support-your-markdown-authoring).
+
+## Initial Setup
+
+In order to get this website working, you will first need to install git, and clone the repository.
+```shell
+git clone {repository url}
+```
+
+### Installing boot
+
+Next, you may need to install boot.  Boot requires the Java JDK to work.  This can be gotten from
+the [Oracle Java website](https://java.com/en/download/) or found in your favorite package manger:
+* [Homebrew](https://github.com/homebrew/homebrew) - `brew update; brew cask install java`
+* [nix](http://nixos.org/nix) - [Instructions](https://blog.flyingcircus.io/2016/05/12/automatic-installation-of-oracle-java/)
+* [chocolatey](https://chocolatey.org/) - `choco install jdk8`
+  
+Next download Boot and place it somewhere in your path.  On Windows this can be done with:
+```PowerShell
+wget -Uri https://github.com/boot-clj/boot-bin/releases/download/latest/boot.exe -Outfile $env:SystemRoot/boot.exe
+```
+
+On Mac or Linux, boot is available in (respectively):
+* [Homebrew](https://github.com/homebrew/homebrew) - `brew install boot-clj`
+* [nix](http://nixos.org/nix) - `nix-env -i boot`
+
+### Finishing the installation
+
+After Boot and Java are installed, Boot will install everything else needed to make everything work.
+Just execute one of the boot commands from the directory you cloned the EIPS website into (where
+the build.boot file is located)
+
+```shell
+boot build
+```
+
+### Setup for Deployment
+
+For security reasons, the credentials needed to deploy the EIPS website are not included in this
+repository.  Before the deployment feature will work, you must place the correct credentials in
+<< further details here >>
+
+
