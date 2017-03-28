@@ -1,8 +1,20 @@
 (ns site.core
+  "The basic rendering logic for the EIPS website.  Pages are routed by the page function to
+  the correct template handling function.  Each template handling function first checks
+  to make sure that the metadata keys are appropriate, and then executes the selmer template
+  located in the templates directory.
+
+  If you want to add a new template, first, add a new rendering function (I would copy the
+  template function, adjust the expected metadata keys, and call the new template), then add
+  a new clause to the case statement in the page function with the correct key that calls
+  your new template function."
   (:require [hiccup.page :as hp]
             [selmer.parser :as selmer]
             [boot.util :as u]
             [clojure.set :as set]))
+
+
+; sets of expected keys, perhaps with documentation.
 
 (def perun-keys
   "These are the known metadata keys that Perun adds to the metadata.
@@ -33,6 +45,9 @@
 (def permitted-default-template-keys
   (set/union perun-keys (keys known-yaml-keys)))
 
+
+; Utility functions to do error checking
+
 (defn- enforce-has-keys [data expected]
   "this is used to make sure that data essential for rendering is always included.  If it triggers
   and error, you probably need to add the missing key to the YAML metadata for the page in question."
@@ -49,6 +64,8 @@
     (if-not (empty? unexpected-keys)
       (u/fail (str "site.core/enforce-only-permitted-keys: Unknown metadata keys (spelling error?) in '" (:path data) "': " unexpected-keys "\n")))))
 
+; template rendering functions
+
 (defn template
   "The default template handler.  Uses Selmer for rendering"
   [data]
@@ -61,6 +78,8 @@
   [data]
   (enforce-only-permitted-keys data (set/union perun-keys #{:template}))
   (:content data))
+
+; template routing function.
 
 (defn page
   "Dispacthes page rendering to template functions based on the :template metadata key."

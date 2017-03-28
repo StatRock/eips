@@ -1,7 +1,42 @@
+## Introduction
+
 This is the source code for the Eastern Idaho Photography Society's website.
 It includes fragments of websites stored in content which are rendered using
 [Perun](https://github.com/hashobject/perun), [Boot](https://github.com/boot-clj/boot),
 and [Selmer](https://github.com/yogthos/Selmer).
+
+There are a few reasons for this technology stack
+
+  1) Command line systems are easily integrated with third party tools such as text editors.
+  
+  2) Since the website is compiled before upload, only simple complete files are uploaded to
+     the server.  This means that they can be hosted by nearly any service (including
+     extremely cheep options like Amazon S3 or GitHub Pages), and because the hosting solution
+     doesn't involve any complex processing, there is virtually no attack surface, you are unlikely
+     to get hacked.
+     
+  3) Because everything is automated and documented (and links to tutorials are provided),
+     it is easy to pick up, and immediately gain consistent behavior.  Every page will have
+     consistent headers, because the automation ensures it.  This also makes it incredibly
+     simple to add something to the header, as there is only one place to change to update
+     everything.
+     
+     The benefits of consistent behavior can't be overstated.  For instance, this makes it
+     simple to ensure that every image on the website has a copyright notice, or has been
+     watermarked.  It also makes it possible to catch for mistakes before publishing.  
+     Spell check can be built into the publishing process, ensuring that everything is always
+     spelled correctly on the publicly facing website.
+     
+  4) Broad tool support - Because most everything is based on simple text files, they
+     can be processed using a wide variety of different tools, from highly specialized tools
+     designed for specific purposes (for instance, to alphabetize a glossary), to generalized
+     tools such as text editors.
+     
+  5) Plain text is eternal.  So long as you have this repository backed up
+
+You also might want to look at the [glossary](./glossary.md) and the 
+[project glossary](./project_glossary.md)
+
 
 ## Use
 
@@ -77,21 +112,29 @@ The project has the following directory structure:
   templates add.
   * advancements - contains the full sized images and a manifest for each advancement project (in independent directories).  The advancement pages are generated automatically from these images
     and information in the manifest.
+  
   * js - Contains javascript files used for dynamic functionality on pages.
   
     Right now, this only includes the javascript which selects the sidebar image to display.
   * index.html - This is the root page for the website.
+
 * public - contains the finished renderings of the website after boot builds them.
+
 * src - contains rendering instructions as well as the logic for generation of the Advancements pages
+
 * target - contains compiled 
+
 * templates - contains the Selmer templates used to render various parts of the website.  Common, 
   shared content can be found in these templates.
+
 * .gitignore - contains a list of files which should not be included in the source repository.
   These files will not have their histories tracked and will not propigate from one computer to
   another during git cloning.  Many of these files are incidental.
+
 * build.boot - this controls the build process and defines the build tasks.  If a build task doesn't
   work, look here first.
-  
+
+
 ## A Note on Markdown
 
 You might have noticed that this is a Markdown file, and that this website supports Markdown.  I
@@ -111,6 +154,7 @@ and platforms (such as WordPress) support Markdown as well.
 Second, I will note that there are many excellent tools for markdown editing itself, including
 some WYSIWYGs.  Here is a nice [sampling](https://github.com/karthik/markdown_science/wiki/Tools-to-support-your-markdown-authoring).
 
+
 ## Initial Setup
 
 In order to get this website working, you will first need to install git, and clone the repository.
@@ -125,7 +169,7 @@ the [Oracle Java website](https://java.com/en/download/) or found in your favori
 * [Homebrew](https://github.com/homebrew/homebrew) - `brew update; brew cask install java`
 * [nix](http://nixos.org/nix) - [Instructions](https://blog.flyingcircus.io/2016/05/12/automatic-installation-of-oracle-java/)
 * [chocolatey](https://chocolatey.org/) - `choco install jdk8`
-  
+
 Next download Boot and place it somewhere in your path.  On Windows this can be done with:
 ```PowerShell
 wget -Uri https://github.com/boot-clj/boot-bin/releases/download/latest/boot.exe -Outfile $env:SystemRoot/boot.exe
