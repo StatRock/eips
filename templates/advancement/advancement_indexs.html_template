@@ -1,15 +1,33 @@
+---
+template: none
+---
 <html>
 <head>
-  <title>{{advancement_title}}</title>
+  <title>{{advancement-title}}</title>
   <meta charset="UTF-8"/>
   <link rel="stylesheet" type="text/css" href="/corpstyle.css"/>
+  <!--
+    For image light box functionality, some options:
+
+    * http://photoswipe.com/
+      * https://github.com/dimsemenov/photoswipe
+      * http://photoswipe.com/documentation/getting-started.html
+    * https://cdnjs.com/libraries/galleria
+      * https://github.com/worseisbetter/galleria
+      * https://galleria.io/get-started/
+
+    some references:
+
+    * https://designm.ag/inspiration/32-open-source-plugins-for-image-galleries-carousels/
+    -->
 </head>
 <body bgcolor="#FFFFFF">
   <div align="center">
     <h2>{{title}}</h2>
     <ul class="layout-grid">
-      {% for image in images &}
-        <li><a href="pages/{{image.name}}.html"><img src="thumbnails/{{image.name}}.jpg" border="0"></a></li>
+      {% for image in images %}
+        <li><a href="/{{image}}">
+          <img src="/{{image}}" width="150" border="0"></a></li>
       {% endfor %}
     </ul>
     <div>

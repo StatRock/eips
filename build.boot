@@ -42,13 +42,14 @@
          (comp
            (mime-type)
            (build-date)
+           (images-dimensions)
            ; render 404
            #_(watermark)
-           #_(advancements)
+           (advancements)
            (copy-static-assets)
            (yaml-metadata :extensions [".html" ".htm"])
            (markdown)
-           #_(print-meta)
+           #_(print-meta)                                   ; for debugging.
            (render :renderer 'site.core/page :out-dir "")))
 
 (deftask build
