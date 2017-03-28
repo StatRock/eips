@@ -12,6 +12,7 @@
 
 # intellij configuration.
 boot-project.iml
+/web/
 
 # leinigen maven and java components
 project.clj
