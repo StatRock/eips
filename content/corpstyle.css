@@ -96,3 +96,11 @@ a:hover, a:active {
   margin: auto;
   text-align: center;
 }
+
+#content table,
+.content table,
+#header table,
+#nave-bottom table{
+  margin-left: auto;
+  margin-right: auto;
+}
