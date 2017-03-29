@@ -7,59 +7,59 @@ and [Selmer](https://github.com/yogthos/Selmer).
 
 There are a few reasons for this technology stack
 
-  1) Command line systems are easily integrated with third party tools such as text editors.
-  
-  2) Since the website is compiled before upload, only simple complete files are uploaded to
+  1. Command line systems are easily integrated with third party tools such as text editors.
+
+  2. Since the website is compiled before upload, only simple complete files are uploaded to
      the server.  This means that they can be hosted by nearly any service (including
      extremely cheep options like Amazon S3 or GitHub Pages), and because the hosting solution
      doesn't involve any complex processing, there is virtually no attack surface, you are unlikely
      to get hacked.
-     
-  3) Because everything is automated and documented (and links to tutorials are provided),
+
+  3. Because everything is automated and documented (and links to tutorials are provided),
      it is easy to pick up, and immediately gain consistent behavior.  Every page will have
      consistent headers, because the automation ensures it.  This also makes it incredibly
      simple to add something to the header, as there is only one place to change to update
      everything.
-     
+
      The benefits of consistent behavior can't be overstated.  For instance, this makes it
      simple to ensure that every image on the website has a copyright notice, or has been
-     watermarked.  It also makes it possible to catch for mistakes before publishing.  
+     watermarked.  It also makes it possible to catch for mistakes before publishing.
      Spell check can be built into the publishing process, ensuring that everything is always
      spelled correctly on the publicly facing website.
-     
-  4) Broad tool support - Because most everything is based on simple text files, they
+
+  4. Broad tool support - Because most everything is based on simple text files, they
      can be processed using a wide variety of different tools, from highly specialized tools
      designed for specific purposes (for instance, to alphabetize a glossary), to generalized
      tools such as text editors.
-     
-  5) Plain text is eternal.  So long as you have this repository backed up
 
-You also might want to look at the [glossary](./glossary.md) and the 
+  5. Plain text is eternal.  So long as you have this repository backed up
+
+You also might want to look at the [glossary](./glossary.md) and the
 [project glossary](./project_glossary.md)
 
 
 ## Use
 
-For first time setup, see [below](#Setup).
+For first time setup, see [below](#Initial_Setup).
 
 The build is controlled by [build.boot](./build.boot) which includes the following tasks:
 
   * `build` - Processes the source code and places the output in the `public` directory.
   * `deploy` - (in progress) Executes build, and publishes the results to the web.
   * `dev` - Processes the source code and hosts it on a local web server.  It will also track built
-    built files and rebuild for any changes.  (Though it does not track changes to build.boot).  
+    built files and rebuild for any changes.  (Though it does not track changes to build.boot).
     Press `Ctrl-C` to stop this.
 
-These tasks can be executed from the root project directory with `boot {taskname}`.  For instance, 
+These tasks can be executed from the root project directory with `boot {taskname}`.  For instance,
 you would use `boot dev` to start the dev watcher.  This will then print a http link (it will
-look like `Started Jetty on http://localhost:3000`) after which you can browse to 
-[http://localhost:3000](http://localhost:3000) to see a local version of the website.  
-(It may take a while to reach this point, and will print out reams of details about 
+look like `Started Jetty on http://localhost:3000`) after which you can browse to
+[http://localhost:3000](http://localhost:3000) to see a local version of the website.
+(It may take a while to reach this point, and will print out reams of details about
 what it is doing.)  Similarly, `boot build` will get it put the results in the build directory.
 
 ### Making Changes
 
-Changes to this project are managed using the [git](https://git-scm.com/) version control system.  
+Changes to this project are managed using the [git](https://git-scm.com/) version control system.
 This means that there is a record of changes to this website and previous versions of the website
 can be checked out and viewed by anyone with a copy of the git repository.  This can be very
 useful when you realize that you have made a mistake, or wonder how something used to be done.
@@ -69,16 +69,16 @@ with `git commit`.  This will cause a text editor to open so that you can write 
 explanation of your changes.  This description is critical when trying to understand the history,
 so make sure to explain what is happening.
 
-You may also want a better tutorial on Git.  For beginners I will recommend 
+You may also want a better tutorial on Git.  For beginners I will recommend
 [this](https://www.cloudways.com/blog/git-tutorial-for-beginners-version-control/).  You might also
 appreciate [this](https://www.udacity.com/course/how-to-use-git-and-github--ud775) and
 [this](https://www.codecademy.com/learn/learn-git).  There is, of course, also the tradition of
-reading the [documentation](https://git-scm.com/documentation), which includes a 
+reading the [documentation](https://git-scm.com/documentation), which includes a
 [tutorial](https://git-scm.com/docs/gittutorial).
 
 It would also be remiss of me to not mention some of the excellent graphical interfaces for git,
 such as, [SourceTree](https://www.sourcetreeapp.com/), [Github Desktop](https://desktop.github.com/),
-and [TortoiseGit](https://tortoisegit.org/).  You can find more on the 
+and [TortoiseGit](https://tortoisegit.org/).  You can find more on the
 [Git website](https://git-scm.com/downloads/guis/).
 
 ### Deployment
@@ -98,7 +98,7 @@ We also have a small amount of custom logic used to generate the advancement pag
 web fragments.  This logic is written in [Clojure](https://clojure.org/), and intentionally minimal.
 
 The details for processing are described in the render-website task. sift means to copy files, so,
-sifting to-asset means that that file will appear on the website.  
+sifting to-asset means that that file will appear on the website.
 [Markdown](https://daringfireball.net/projects/markdown/syntax) and HTML files will be processed,
 and rendered as described by site.core/page.  They are expected to contain [YAML](http://yaml.org/)
 front matter, much like that used [elsewhere](http://assemble.io/docs/YAML-front-matter.html).  This
@@ -112,9 +112,9 @@ The project has the following directory structure:
   templates add.
   * advancements - contains the full sized images and a manifest for each advancement project (in independent directories).  The advancement pages are generated automatically from these images
     and information in the manifest.
-  
+
   * js - Contains javascript files used for dynamic functionality on pages.
-  
+
     Right now, this only includes the javascript which selects the sidebar image to display.
   * index.html - This is the root page for the website.
 
@@ -122,9 +122,9 @@ The project has the following directory structure:
 
 * src - contains rendering instructions as well as the logic for generation of the Advancements pages
 
-* target - contains compiled 
+* target - contains compiled
 
-* templates - contains the Selmer templates used to render various parts of the website.  Common, 
+* templates - contains the Selmer templates used to render various parts of the website.  Common,
   shared content can be found in these templates.
 
 * .gitignore - contains a list of files which should not be included in the source repository.
@@ -138,14 +138,14 @@ The project has the following directory structure:
 ## A Note on Markdown
 
 You might have noticed that this is a Markdown file, and that this website supports Markdown.  I
-would suggest that you use it, after all, it is simple and it allows you to focus exclusively on 
+would suggest that you use it, after all, it is simple and it allows you to focus exclusively on
 the content.  However many people like the apparent simplicity of WYSIWYG (what you see is what
 you get) editors.  First, I will briefly observe that in something like Markdown, you always see what is
 going on.  There can't be any invisible formatting commands, because all formatting commands *must*
-be visible, after all, they are also just text.  Next, I will direct you to some tools to help out.  
+be visible, after all, they are also just text.  Next, I will direct you to some tools to help out.
 
-First, most modern text editors like [atom](https://atom.io/), 
-[scrivener](https://www.literatureandlatte.com/scrivener.php), 
+First, most modern text editors like [atom](https://atom.io/),
+[scrivener](https://www.literatureandlatte.com/scrivener.php),
 [emacs](https://www.gnu.org/software/emacs/) or [Sublime Text](https://www.sublimetext.com/) either
 support or have plugins that support markdown.  Many of these plugins even include a preview
 function (not that you really need tool support to edit markdown).  Also, most web authoring tools,
@@ -194,5 +194,3 @@ boot build
 For security reasons, the credentials needed to deploy the EIPS website are not included in this
 repository.  Before the deployment feature will work, you must place the correct credentials in
 << further details here >>
-
-
