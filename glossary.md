@@ -11,7 +11,7 @@ Build: The basic high level process executed by the build tool.  This typically 
 
 Chocolatey: a package for Windows.
 
-Clojure: A programming language belonging to the LISP family that runs on the JV
+Clojure: A programming language belonging to the LISP family that runs on the JVM
 
 Command line: A REPL designed for computer interface
 
@@ -50,8 +50,8 @@ Shell: see Command line
 
 Source control: see version control
 
-Static site: A website that is designed to run with minimal server side assistance.  Typically 
+Static site: A website that is designed to run with minimal server side assistance.  Typically
   includes preprocessed resources stored on a simple HTTP server
 
 Version control: a system designed to maintain the history of a set of text documents, and perhaps
-  other digital artifacts. 
+  other digital artifacts.

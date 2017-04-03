@@ -1,7 +1,7 @@
 ## Introduction
 
 This is the source code for the Eastern Idaho Photography Society's website.
-It includes fragments of websites stored in content which are rendered using
+It includes fragments of websites stored in the content directory which are rendered using
 [Perun](https://github.com/hashobject/perun), [Boot](https://github.com/boot-clj/boot),
 and [Selmer](https://github.com/yogthos/Selmer).
 
@@ -55,7 +55,7 @@ you would use `boot dev` to start the dev watcher.  This will then print a http 
 look like `Started Jetty on http://localhost:3000`) after which you can browse to
 [http://localhost:3000](http://localhost:3000) to see a local version of the website.
 (It may take a while to reach this point, and will print out reams of details about
-what it is doing.)  Similarly, `boot build` will get it put the results in the build directory.
+what it is doing.)  Similarly, `boot build` will get it to put the results in the build directory.
 
 ### Making Changes
 
@@ -87,12 +87,11 @@ Once you are happy with the website as it appears on your system, you might want
 First, you will need to get the credentials as described [below](#Setup-for-Deployment).
 <<details of deployment go here, once they exist.>>
 
-
 ## How It Works
 
 Perun is a static site generator based on the boot build tool.  Perun contains tasks which are
 useful for generating a static HTML website.  We are using these tools, along with the Selmer
-temperating engine to generate plain HTML files which are then uploaded to the web server over SFTP.
+templating engine to generate plain HTML files which are then uploaded to the web server over SFTP.
 
 We also have a small amount of custom logic used to generate the advancement pages, and error proof
 web fragments.  This logic is written in [Clojure](https://clojure.org/), and intentionally minimal.
@@ -122,7 +121,7 @@ The project has the following directory structure:
 
 * src - contains rendering instructions as well as the logic for generation of the Advancements pages
 
-* target - contains compiled
+* target - would contain compiled clojure stuff.
 
 * templates - contains the Selmer templates used to render various parts of the website.  Common,
   shared content can be found in these templates.
@@ -165,7 +164,7 @@ git clone {repository url}
 ### Installing boot
 
 Next, you may need to install boot.  Boot requires the Java JDK to work.  This can be gotten from
-the [Oracle Java website](https://java.com/en/download/) or found in your favorite package manger:
+the [Oracle Java website](https://java.com/en/download/) or found in your favorite package manager:
 * [Homebrew](https://github.com/homebrew/homebrew) - `brew update; brew cask install java`
 * [nix](http://nixos.org/nix) - [Instructions](https://blog.flyingcircus.io/2016/05/12/automatic-installation-of-oracle-java/)
 * [chocolatey](https://chocolatey.org/) - `choco install jdk8`

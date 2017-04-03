@@ -50,7 +50,7 @@
 
 (defn- enforce-has-keys [data expected]
   "this is used to make sure that data essential for rendering is always included.  If it triggers
-  and error, you probably need to add the missing key to the YAML metadata for the page in question."
+  an error, you probably need to add the missing key to the YAML metadata for the page in question."
   (let [missing-keys (set/difference expected (set (keys data)))]
     (if-not (empty? missing-keys)
       (u/fail (str "site.core/enforce-has-keys: File: '" (:path data) "' is missing the following needed metadata keys: " missing-keys "\n")))))
@@ -58,7 +58,7 @@
 (defn- enforce-only-permitted-keys
   "In odrder to protect against mispelling of metadata keys, this ensures that the render is aware
   aware of all the metadata keys used.  If this causes a failure on a key that isn't the result of
-  a spelling error, please add thta key to the appropriate list above."
+  a spelling error, please add that key to the appropriate list above."
   [data permitted]
   (let [unexpected-keys (set/difference (set (keys data)) permitted)]
     (if-not (empty? unexpected-keys)
@@ -82,7 +82,7 @@
 ; template routing function.
 
 (defn page
-  "Dispacthes page rendering to template functions based on the :template metadata key."
+  "Dispatches page rendering to template functions based on the :template metadata key."
   [{data :entry}]
   (case (or (keyword (:template data)) :default)
     :none (no-template data)
