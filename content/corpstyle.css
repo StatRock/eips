@@ -49,14 +49,6 @@ img {
   display: block;
 }
 
-#header div.pane {
-  display: none
-}
-
-#header div.pane.visible {
-  display: block;;
-}
-
 {
   font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
   font-size: 12px;

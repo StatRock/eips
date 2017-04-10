@@ -38,19 +38,7 @@
     <p><img src="/image/adveipslogos.jpg" width="144" height="90" alt="eips logo">
       <img src="/image/25-yearss.jpg" width="144" height="108" alt="25 years">
     </p>
-    <div class="pane visible" data-name="eclipse">
-      <p><img src="/image/265338main_aug1totality_full_full.jpg" width="288" height="254" alt="solar eclipse"></p>
-      <h2>This is in Idaho Falls in August 21, 2017.</h2>
-    </div>
-    <div class="pane" data-name="oxbos">
-      <p><img src="/image/oxbow2.jpg" alt="Oxbow in Grand Teton National Park" name="oxbow_lake" width="520" height="156" id="oxbow_lake" /></p>
-      <p>&copy; Roger Heng Oxbow Grand Teton National Park</p>
-    </div>
-    <div class="pane" data-name="sleigh">
-      <p><img src="/field_trips/_A101804.jpg" width="372" height="223" alt="dog rqces" /></p>
-      <p>&copy; Roger Heng 2014</p>
-    </div>
-    <div class="pane" data-name="none"></div>
+    {{header-image|safe}}
   </div>
   <!-- /* problem with background color body */ -->
   <div class="content">
