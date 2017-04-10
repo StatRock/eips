@@ -29,6 +29,7 @@
   <!--[if lt IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <script src="/js/select_navs.js" ></script>
 </head>
 
 <body>
@@ -86,14 +87,14 @@
   </ul>
   </div>
   {% if not no-right-matter %}
-  <div id="nav-right">
+  <div id="nav-right" data-selected="{{ nav-right-select }}">
     <div class="visible" data-name="riverssm">
       <h2>Best of Show October Show 2012</h2>
       <h2><span class="style3"> Eastern Idaho Photographic Society's October 2012 Juried Show</span></h2>
       <p class="img"><img src="/web page images/Inverness Riverssm.png" width="400" height="253" alt="Inverness River"></p>
       <p>&copy; Michael Fryer</p>
     </div>
-    <div>
+    <div data-name="lisasunfl">
       <h2>First Place October Show 2003</h2>
       <p><span class="style3">Eastern Idaho Photographic Society's October 2003 Juried Show</span></p>
       <p><span class="style3"><img src="/web page images/lisasunfl.jpg" alt="first place" width="142" height="216" /></span></p>
@@ -108,7 +109,7 @@
       <p>&copy; Roger Heng</p>
       <p><img src="/web page images/_RWH1915.jpg" width="645" height="432" alt="still life" /></p>
     </div>
-    <!--<div>
+    <!--<div data-name="field-trip">
       <p><span class="style3">Photograph of members on a field trip</span></p>
       <p><img src="/old files new web/image2/photographers.jpg" alt="photographers" width="350" height="242" /></p>
       <p>&nbsp;</p>
@@ -118,12 +119,12 @@
       <p><img src="/web page images/_AAH8784a.jpg" alt="chesterfield id" width="216" height="145" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="bridge-nowhere">
       <p><span class="style3">HDR photograph &copy; Michael Fryer</span></p>
       <p><img src="/web page images/Bridge to Nowhere.jpg" alt="bridge" width="216" height="145" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="mount_baker">
       <h2>Third Place October Show 2011</h2>
       <p><span class="style3">Eastern Idaho Photographic Society's October 2011 Juried Show</span></p>
       <p><img src="/web page images/mount_bakersm.jpg" alt="mt baker" width="400" height="232" /></p>
@@ -134,64 +135,64 @@
       <p>&copy; Nelson Sibulo 2012<br>
       Member on Field Trip&nbsp;</p>
     </div>
-    <div>
+    <div data-name="john-waterfall">
       <p><span class="style3">Waterfall Along Columbia River.</span></p>
       <p><span class="style3">&copy; John Beach</span></p>
       <p><img src="/linkimages/john_waterfall.jpg" alt="john_waterfall" width="346" height="226" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="shannon-advancement">
       <p><span class="style3">Image Shown in Advancement</span> &copy; Shannon B. 2011</p>
       <p><img src="/web page images/IMG_1160_sm.jpg" alt="cat" width="300" height="225" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="bill">
       <p><span class="style3">Photographing wildlife by a member</span></p>
       <p><img src="/web page images/bill.jpg" width="200" height="107" alt="bill" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="india">
       <p><span class="style3">Best of Show 2010 EIPS October Show</span></p>
       <p><img src="/image/India 2011-6 115 sm.png" width="387" height="269" alt="best of show" /></p>
       <p>&copy; Roger Boe</p>
     </div>
-    <div>
+    <div data-name="show2009">
       <p><span class="style3">Best of Show October 2009 &copy; Michael Fryer,</span></p>
       <p><img src="/web page images/Best of Show2.jpg" alt="hood" width="320" height="400" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="doors">
       <p><span class="style3">Advancement image by &copy; Steve Spring</span></p>
       <p><img src="/image adv/doors2.jpg" alt="doors" width="216" height="205" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="paint">
       <p><span class="style3">Paint with light workshop</span> &copy; Steve Spring 2011</p>
       <p><img src="/web page images/IMG_0561club.jpg" alt="paint with light" width="216" height="216" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="show2003">
       <p><span class="style3">Best of Show October 2003</span> &copy; Doug Jenson</p>
       <p><img src="/web page images/fog.jpg" alt="fog" width="300" height="195" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="lighthouse">
       <p>Yaquina Lighthouse &copy; Sue Heng 2008</p>
       <p><img src="/web page images/9135 yaquina lilghthouse vertical.jpg" alt="lighthouse" width="187" height="288" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="mammoth-falls">
       <p>Mammoth falls, Columbia River Gorge, Oregon
         Best of Show 2006, &copy; RodneyJack</p>
       <p><img src="/web page images/bridge_fallssm.jpg" alt="Mammoth Falls" width="133" height="166" align="right" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="craters">
       <p><span class="style3">Photograph of Roger Boe &copy; 2011</span></p>
       <p><img src="/web page images/craters select 015.jpg" alt="craters" width="450" height="315" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="island-park">
       <p><span class="style3">Photograph a bridge in Island Park by &copy; Roger Heng</span></p>
       <p><img src="/blm_forest_nat_parks/targhee_image/DSC_2146.jpg" width="300" height="200" alt="Island Park Bridage" /></p>
       <p>&nbsp;</p>
@@ -202,7 +203,7 @@
       <p><img src="/member%20images/imagesboe/croped2010.jpg" alt="kung fu" width="294" height="271" /></p>
       <p>&nbsp;</p>
     </div>
-    <div>
+    <div data-name="ruin-of0cagsaua">
       <p><span class="style3">Nelson's image of Ruin Of Cagsaua- Philippines</span> &copy; 2011</p>
       <p><img src="/member images/nelson_images/Ruin Of Cagsaua- Philippines.JPG" alt="Ruin Of Cagsaua- Philippines" width="450" height="280" /></p>
       <p>&nbsp;</p>
