@@ -11,7 +11,9 @@
   (:require [hiccup.page :as hp]
             [selmer.parser :as selmer]
             [boot.util :as u]
-            [clojure.set :as set]))
+            [clojure.set :as set]
+            [clojure.pprint :as pprint]
+            [clojure.java.io :as io]))
 
 
 ; sets of expected keys, perhaps with documentation.
@@ -24,7 +26,7 @@
     :filename :full-path :mime-type
     :original :parent-path :path :short-filename
     :slug :permalink :out-dir :original-path :io.perun/trace
-    :date-build })
+    :date-build})
 
 (def known-yaml-keys
   "These are metadata keys that we use, listed here to protect from misspellings, and describe
@@ -36,15 +38,39 @@
    :nav-right-select "Fixes the right nav content rather than having it randomly chosen by
                       javascript."
    :no-right-matter "prevents the right matter from rendering when set to true."
+   :template "the file name of the template to be used to render the file (without the .html_template extension) or none.
+              If none, then selmer will not process the file."
    })
 
 (def required-yaml-keys
-  "These are keys that the template requires to render correctly."
-  #{:title})
+  "These are keys that various templates require to render correctly."
+  {"basic_template" #{:title}})
 
-(def permitted-default-template-keys
-  (set/union perun-keys (keys known-yaml-keys)))
+(def permitted-template-keys
+  "these are various keys that a particular template knows how to handle."
+  {"basic_template" (keys known-yaml-keys)})
 
+(def yaml-defaults
+  "These are default values for keys that will be used to render pages"
+  {:header-image "oxbow"
+   :template     "basic_template"})
+
+(defn- to-template-file-name [file-name]
+  (str file-name ".html_template"))
+
+(defn- do-render [template-file data]
+  (if-not (io/resource template-file)
+    (u/fail (str "failed to render '" (:path data) "' because expected template '" template-file "' was not found.\n"))
+    (selmer/render-file template-file data)))
+
+(def key-transforms
+  "These are transformations that will be applied to certian keys for certian templates before rendering.
+
+  A note, because of how selmer currently memoizes tempates, the targets of includes must be known at
+  compile time and cannot be determined based on data.  Because of that, we are including the rendering
+  in the data transform."
+  {"basic_template" (fn [data] (-> data
+                                 (update-in [:header-image] #(do-render (str "header_images/" (to-template-file-name %)) data))))})
 
 ; Utility functions to do error checking
 
@@ -68,15 +94,20 @@
 
 (defn template
   "The default template handler.  Uses Selmer for rendering"
-  [data]
-  (enforce-has-keys data required-yaml-keys)
-  (enforce-only-permitted-keys data permitted-default-template-keys)
-  (selmer/render-file "basic_template.html_template" data))
+  [template data]
+  (let [required-keys (get required-yaml-keys template)
+        permitted-keys (set/union perun-keys (get permitted-template-keys template))
+        template-file (to-template-file-name template)
+        data-transformer (or (get key-transforms template) identity)
+        updated-data (data-transformer data)]
+    (enforce-has-keys data required-keys)
+    (enforce-only-permitted-keys data permitted-keys)
+    (do-render template-file updated-data)))
 
 (defn no-template
   "Handles rendering for pages that are compete by themselves."
   [data]
-  (enforce-only-permitted-keys data (set/union perun-keys #{:template}))
+  (enforce-only-permitted-keys data (set/union perun-keys (keys yaml-defaults)))
   (:content data))
 
 ; template routing function.
@@ -84,6 +115,8 @@
 (defn page
   "Dispatches page rendering to template functions based on the :template metadata key."
   [{data :entry}]
-  (case (or (keyword (:template data)) :default)
-    :none (no-template data)
-    :default (template data)))
+  (let [data-with-defaults (merge yaml-defaults data)
+        template-name (:template data-with-defaults)]
+    (if (= template-name "none")
+      (no-template data-with-defaults)
+      (template template-name data-with-defaults))))

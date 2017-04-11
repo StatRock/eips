@@ -24,6 +24,7 @@ img {
   padding: 10px;
   z-index: 2;
 }
+
 #nav-left ul {
   margin: 0;
   padding: 0;
@@ -46,14 +47,6 @@ img {
 
 #nav-right div.visible {
   display: block;
-}
-
-#header div.pane {
-  display: none
-}
-
-#header div.pane.visible {
-  display: block;;
 }
 
 {
@@ -94,4 +87,12 @@ a:hover, a:active {
 .content {
   margin: auto;
   text-align: center;
+}
+
+#content table,
+.content table,
+#header table,
+#nave-bottom table{
+  margin-left: auto;
+  margin-right: auto;
 }
