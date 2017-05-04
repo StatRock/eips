@@ -9,10 +9,21 @@
   padding: 10px;
   z-index: 3;
 }
+
+.content p, .content h1,
+.content h2, .content h3,
+.content h4, .content h5,
+.content h6, .content ul.text {
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 img {
    padding:1px;
    border:1px solid #021a40;
 }
+
 #nav-left {
   position: absolute;
   width: 128px;
@@ -54,6 +65,7 @@ img {
   font-size: 12px;
   color: #000000;
 }
+
 a:link { color: #0000FF; }
 a:visited { color: #FF00FF; }
 a:hover { color: #00CCFF; }
@@ -64,6 +76,7 @@ a:link, a:visited {
   color: #6A5ACD;
   background-color: transparent;
 }
+
 a:hover, a:active {
   text-decoration: underline overline;
   color: #191970;
