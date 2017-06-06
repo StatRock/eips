@@ -10,10 +10,19 @@
 .content p, .content h1,
 .content h2, .content h3,
 .content h4, .content h5,
-.content h6, .content ul.text {
+.content h6, .content ul.text,
+#nav-bottom p {
   max-width: 640px;
   margin-right: auto;
   margin-left: auto;
+}
+
+#nav-bottom h2 {
+  font-size: 1.15em;
+}
+
+#nav-bottom a {
+  white-space: nowrap;
 }
 
 img {
