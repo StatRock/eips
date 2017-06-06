@@ -74,7 +74,9 @@
          []
          (comp
            (watch :verbose true)
-           (render-website)                                 ;for cljs
+           (render-website)
+           (target :dir #{"public"})
+           ;for cljs
            #_(reload)
-           (lr/livereload)                                  ; doesn't actually reload right now.
-           (http/serve :resource-root "")))
+           (lr/livereload)     ; doesn't actually reload right now.
+           (http/serve :dir "public")))
