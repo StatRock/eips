@@ -13,8 +13,7 @@
 .content h6, .content ul.text,
 #nav-bottom p {
   max-width: 640px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 210px 20px 170px;
 }
 
 #nav-bottom h2 {
@@ -30,16 +29,16 @@ img {
    border:1px solid #021a40;
 }
 
-#nav-left {
-  position: absolute;
-  width: 128px;
-  top: 20px;
-  left: 20px;
-  font-size: 0.938em;
+.container {
+    display: flex;
+    flex-direction: row;
+}
 
-  background-color: #ffffff;
+#nav-left {
+  font-size: 0.938em;
   padding: 10px;
   z-index: 2;
+  background-color: rgb(0,102,255);
 }
 
 #nav-left ul {
@@ -48,12 +47,8 @@ img {
 }
 
 #nav-right {
-  position: absolute;
   width: 275px;
-  top: 20px;
-  right: 20px;
   border: none;
-  background-color: #ffffff;
   padding: 10px;
   z-index: 1;
 }
