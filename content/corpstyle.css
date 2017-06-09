@@ -1,9 +1,20 @@
+body {
+  margin-left: 2em;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  text-align: center;
+}
+
 .content {
   position: relative;
   width: auto;
   min-width: 120px;
-  margin: 0 210px 20px 170px;
-  padding: 10px;
   z-index: 3;
 }
 
@@ -11,9 +22,8 @@
 .content h2, .content h3,
 .content h4, .content h5,
 .content h6, .content ul.text,
-#nav-bottom p {
+#nav-bottom p, #nav-bottom h2 {
   max-width: 640px;
-  margin: 0 210px 20px 170px;
 }
 
 #nav-bottom h2 {
