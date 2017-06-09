@@ -37,10 +37,10 @@
 </head>
 
 <body>
-  <div id="header" >
+  <div class="header" >
     <img src="/image/adveipslogos.jpg" width="144" height="90" alt="eips logo">
     <div>
-        <a style="font-size:24px; font-weight:bold; vertical-align:top" >Eastern Idaho <br> Photographic Society</a>
+        <h1>Eastern Idaho Photographic Society</h1>
     </div>
     <img src="/image/25-yearss.jpg" width="144" height="90" alt="25 years">
     </div>
@@ -61,7 +61,7 @@
         <li><a href="/show_main.html">October Show</a></li>
         <li><a href="/exhibits.html">Exhibits</a></li>
         <li><a href="/field_trip.html">Field Trips</a></li>
-        ul>
+      </ul>
     </li>
     <li><a href="/member_images.html">Member Photographs</a></li>
     <li><a href="/archives.html">Archives</a></li>
