@@ -52,7 +52,7 @@
     <li><a href="/meet.html">Meetings</a>
       <ul>
         <li><a href="/presentations.html">Presentations</a></li>
-        <li><a href="/workshops.html">Workshops</a></li>
+        <li><a href="/workshop.html">Workshops</a></li>
         <li><a href="/program2017.html">Positive Critiques</a></li>
       </ul>
     </li>
@@ -64,7 +64,13 @@
       </ul>
     </li>
     <li><a href="/member_images.html">Member Photographs</a></li>
-    <li><a href="/archives.html">Archives</a></li>
+    <li><a href="/archives.html">Archives</a>
+      <ul>
+        <li><a href="newsletters.html">Newsletters, 2003-2008 and 2011</a></li>
+        <li><a href="advancements/advancement%20program%20images.html">Advancement Images, 2007-2012</a></li>
+        <li><a href="earth_day.html">Earth Day 2005</a></li>
+      </ul>
+    </li>
     <li><a href="mailto:eips@eips.net">Contact</a></li>
   </ul>
   </div>
