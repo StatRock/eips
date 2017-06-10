@@ -110,10 +110,9 @@ a:hover, a:active {
     padding: 25px;
 }
 
-#content, #header, #nav-bottom,
+#content, #nav-bottom,
 .content {
   margin: auto;
-  text-align: center;
 }
 
 #content table,
