@@ -31,7 +31,7 @@ img {
 .content h2, .content h3,
 .content h4, .content h5,
 .content h6, .content ul.text,
-#nav-bottom p, #nav-bottom h2 {
+#nav-bottom {
   max-width: 640px;
 }
 
@@ -79,19 +79,20 @@ img {
     padding: 25px;
 }
 
-/* content (main page text & footer text) */
-
-#content, #nav-bottom,
-.content {
-  margin: auto;
-}
+/* horizontal centering */
 
 #content table,
 .content table,
 #header table,
-#nave-bottom table{
+#nav-bottom table,
+.center img,
+img.center {
   margin-left: auto;
   margin-right: auto;
+}
+
+td {
+  text-align: center;
 }
 
 
@@ -110,6 +111,8 @@ hr {
 
 hr.short {
   max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr.double {
