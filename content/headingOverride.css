@@ -7,48 +7,49 @@ Specific Line-heights.
 /*---------------------------------
 	HEADINGS
 -----------------------------------*/
-h1,h2,h3,h4,h5,h6{
-font-weight:bold;
+h1, h2, h3, h4, h5, h6 {
+  font-weight:bold;
+  margin-left: 2em;
 }
 
-h1{
-font-size:3.5em;
-margin:10px 0 10px 0;
-line-height:140%;
-text-align: center;
+h1 {
+  margin: 10px 0 10px 0;
+  line-height: 140%;
+  text-align: center;
+  font-size: 3.5em;
 }
 
-h2{
-font-size:3em;
-margin:10px 0 10px 0;
-line-height:130%;
-text-align: center;
+h2 {
+  margin: 10px 0 10px 0;
+  line-height: 130%;
+  text-align: center;
+  font-size: 2em;
 }
 
-h3{
-font-size:2.25em;
-margin:10px 0 10px 0;
-line-height:120%;
-text-align: center;
+h3 {
+  margin: 10px 0 10px 0;
+  line-height: 120%;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-h4{
-font-size:2em;
-margin:10px 0 10px 0;
-line-height:110%;
-text-align: left;
+h4 {
+  margin: 10px 0 10px 0;
+  line-height: 110%;
+  text-align: left;
+  font-size: 1.15em;
 }
 
-h5{
-font-size:1.5em;
-margin:10px 0 10px 0;
-line-height:110%;
-text-align: left;
+h5 {
+  margin: 10px 0 10px 0;
+  line-height: 110%;
+  text-align: left;
+  font-size: 1em;
 }
 
-h6{
-font-size:1.2em;
-margin:10px 0 5px 0;
-line-height:100%;
-text-align: left;
+h6 {
+  margin: 10px 0 5px 0;
+  line-height: 110%;
+  text-align: left;
+  font-size: 0.8em;
 }
