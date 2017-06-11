@@ -1,40 +1,26 @@
 ---
-template: none
+title: {{advancement-title}}
 ---
-<html>
-<head>
-  <title>{{advancement-title}}</title>
-  <meta charset="UTF-8"/>
-  <link rel="stylesheet" type="text/css" href="/corpstyle.css"/>
-  <!--
-    For image light box functionality, some options:
+<!--
+  For image light box functionality, some options:
 
-    * http://photoswipe.com/
-      * https://github.com/dimsemenov/photoswipe
-      * http://photoswipe.com/documentation/getting-started.html
-    * https://cdnjs.com/libraries/galleria
-      * https://github.com/worseisbetter/galleria
-      * https://galleria.io/get-started/
+  * http://photoswipe.com/
+    * https://github.com/dimsemenov/photoswipe
+    * http://photoswipe.com/documentation/getting-started.html
+  * https://cdnjs.com/libraries/galleria
+    * https://github.com/worseisbetter/galleria
+    * https://galleria.io/get-started/
 
-    some references:
+  a reference
 
-    * https://designm.ag/inspiration/32-open-source-plugins-for-image-galleries-carousels/
-    -->
-</head>
-<body bgcolor="#FFFFFF">
-  <div align="center">
-    <h2>{{title}}</h2>
-    <ul class="layout-grid">
-      {% for image in images %}
-        <li><a href="/{{image}}">
-          <img src="/{{image}}" width="150" border="0"></a></li>
-      {% endfor %}
-    </ul>
-    <div>
-      Photographs Copyright© Photographer, Owner, or Eastern Idaho Photographic Society. Photographs
-      may not be reproduced in any manner without written permission.
-      Web Page Copyright© 2011 Eastern Idaho Photographic Society
-    </div>
-  </div>
-</body>
-</html>
+  * https://designm.ag/inspiration/32-open-source-plugins-for-image-galleries-carousels/
+  -->
+<div align="center">
+  <h2>{{title}}</h2>
+  <ul class="layout-grid">
+    {% for image in images %}
+      <li><a href="/{{image}}">
+        <img src="/{{image}}" width="150" border="0"></a></li>
+    {% endfor %}
+  </ul>
+</div>
