@@ -2,6 +2,11 @@ body {
   margin-left: 2em;
 }
 
+img {
+   padding:1px;
+   border:1px solid #021a40;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -11,11 +16,15 @@ body {
   text-align: center;
 }
 
+.side-by-side {
+    display: flex;
+    flex-direction: row;
+}
+
 .content {
   position: relative;
   width: auto;
   min-width: 120px;
-  z-index: 3;
 }
 
 .content p, .content h1,
@@ -34,29 +43,10 @@ body {
   white-space: nowrap;
 }
 
-img {
-   padding:1px;
-   border:1px solid #021a40;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-}
-
-#nav-left {
-  font-size: 0.938em;
-  padding: 10px;
-  z-index: 2;
-}
-
-#nav-left ul {
-  margin: 0;
-  padding: 0;
-}
+/* nav right */
 
 #nav-right {
-  width: 275px;
+  max-width: 500px;
   border: none;
   padding: 10px;
   z-index: 1;
@@ -70,28 +60,7 @@ img {
   display: block;
 }
 
-{
-  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  color: #000000;
-}
-
-a:link { color: #0000FF; }
-a:visited { color: #FF00FF; }
-a:hover { color: #00CCFF; }
-a:active { color: #FF0000; }
-
-a:link, a:visited {
-  text-decoration: underline;
-  color: #6A5ACD;
-  background-color: transparent;
-}
-
-a:hover, a:active {
-  text-decoration: underline overline;
-  color: #191970;
-  background-color: #C9C3ED;
-}
+/* responsive grids */
 
 .layout-grid,
 .photo-grid {
@@ -110,6 +79,8 @@ a:hover, a:active {
     padding: 25px;
 }
 
+/* content (main page text & footer text) */
+
 #content, #nav-bottom,
 .content {
   margin: auto;
@@ -121,4 +92,40 @@ a:hover, a:active {
 #nave-bottom table{
   margin-left: auto;
   margin-right: auto;
+}
+
+
+/* horizontal line rules */
+
+hr {
+  clear: both;
+  border-bottom: 0;
+  border-top: 1px solid #000;
+  border-right: 0;
+  border-left: 0;
+  margin: 10px 0;
+  min-height: 0;
+  height: 1px;
+}
+
+hr.short {
+  max-width: 300px;
+}
+
+hr.double {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #fff;
+}
+
+hr.double:after {
+	content: '';
+	display: block;
+	margin-top: 2px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #fff;
+}
+
+hr.blank {
+  border-top: 0;
+  height: 20px;
 }
