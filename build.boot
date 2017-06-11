@@ -67,16 +67,23 @@
            (build)
            #_(sftp)))
 
+ (deftask dev
+          "live watch of the built website hosted on http://localhost:3000.  Useful to see the results of changes during development."
+          []
+          (comp
+            (watch :verbose true)
+            (render-website)
+            (target :dir #{"public"})
+            ;for cljs
+            #_(reload)
+            (lr/livereload)     ; doesn't actually reload right now.
+            (http/serve :dir "public")))
 
-(deftask dev
-         "live watch of the built website hosted on http://localhost:3000.  Useful to see the
-          results of changes during development."
+(deftask serve
+         "Serve the website hosted on http://localhost:3000. Keeps the program that displays the website running.  Get out of it with Ctrl C. "
          []
          (comp
-           (watch :verbose true)
            (render-website)
            (target :dir #{"public"})
-           ;for cljs
-           #_(reload)
-           (lr/livereload)     ; doesn't actually reload right now.
-           (http/serve :dir "public")))
+           (http/serve :dir "public")
+           (wait)))
