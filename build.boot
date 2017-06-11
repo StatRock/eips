@@ -53,8 +53,7 @@
            (render :renderer 'site.core/page :out-dir "")))
 
 (deftask build
-         "Build the Eastern Idaho Photography Society website, placing built files in the
-          public directory"
+         "Build the Eastern Idaho Photography Society website, placing built files in the public directory"
          []
          (comp
            (render-website)
