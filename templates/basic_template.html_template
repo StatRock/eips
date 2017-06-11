@@ -10,17 +10,18 @@
         content="The Eastern Idaho Photographic Society has for over twenty years promoted the visual art of photography in Idaho Falls. Members are amateur and professional photographers from Idaho Falls and surrounding towns.">
   <meta name="keywords"
         content="EIPS,Photography,photoclub,Photoclub,photo club,photography,Photographic,photographic,photographers,Idaho,Idaho Falls,visual art,Eastern Idaho Photographic Society,eips,wildlife,camera,camera club">
-  <link rel="stylesheet" type="text/css" href="/corpstyle.css" />
-  {% if style-sheet %}
-    <link rel="stylesheet" type="text/css" href="{{style-sheet}}" />
-  {% endif %}
+
   <style type="text/css">
     {{styles}} /* need to deal with presentations.html */
   </style>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="/css/kickstart.css" media="all" />
   <link rel="stylesheet" type="text/css" href="/style.css" media="all" />
-  <link rel="stylesheet" type="text/css" href="/headerOverride.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="/corpstyle.css" />
+  <link rel="stylesheet" type="text/css" href="/headingOverride.css" media="all" />
+  {% if style-sheet %}
+    <link rel="stylesheet" type="text/css" href="{{style-sheet}}" />
+  {% endif %}
 
   <!-- Javascript -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -71,14 +72,14 @@
     </ul>
   </div>
 
-  <div class="container">
+  <div class="side-by-side">
 
-  <div>
-    {{header-image|safe}}
-    <div class="content">
-      {{content|safe}}
+    <div>
+      {{header-image|safe}}
+      <div class="content">
+        {{content|safe}}
+      </div>
     </div>
-  </div>
 
     {% if not no-right-matter %}
     <div id="nav-right" data-selected="{{ nav-right-select }}">
@@ -208,8 +209,8 @@
     <h2>Photo Locations and Other Links</h2>
     <p><a href="/blm_forest_nat_parks/park_forest_blm.html">National Parks, Forests, Monuments &amp; Reserves</a> |
         <a href="/blm_forest_nat_parks/blm.html">Bureau of Land Management</a> |
-        <a href="/ghost_town.html">Near By Ghost Towns</a> |
-        <a href="/refuges.html">Near By Wildlife Refuges</a> |
+        <a href="/ghost_town.html">Nearby Ghost Towns</a> |
+        <a href="/refuges.html">Nearby Wildlife Refuges</a> |
         <a href="/weather.html">Weather</a> |
         <a href="http://www.usno.navy.mil/data/docs/RS_OneYear.php"> Sunrise/Sunset Times</a> |
         <a href="/photographer_link.html">Photographers/Photo Clubs</a></p>
