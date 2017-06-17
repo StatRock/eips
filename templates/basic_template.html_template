@@ -84,7 +84,17 @@
 
     {% if not no-right-matter %}
     <div id="nav-right" data-selected="{{ nav-right-select }}">
-      <div class="visible" data-name="riverssm">
+      <div class="visible" data-name="IndianRaces">
+        <p>&quot;Indian Races,&quot; 2016 October Juried Show, Best of Show</p>
+        <p><img src="/image/indian races_2016_AngieRoach.jpg" width="640" height="360" alt="Indian Races"/></p>
+        <p>&copy; Angie Roach</p>
+      </div>
+      <div data-name="TrimbosPizza">
+        <p>&quot;Trimbos Pizza</p>
+        <p><img src="/image/Trimbos pizza 6-2017.png" width="487" height="503" alt="Trimbos Pizza"/></p>
+        <p>&copy; Steve Spring, 2017</p>
+      </div>
+        <div data-name="riverssm">
         <p>&quot;Iverness River,&quot; 2012 October Juried Show, Best of Show</p>
         <p><img src="/web page images/Inverness Riverssm.png" width="400" height="253" alt="Inverness River"/></p>
         <p>&copy; Michael Fryer</p>
@@ -109,7 +119,7 @@
         <p><img src="/old files new web/image2/photographers.jpg" alt="photographers" width="350" height="242" /></p>
       </div>-->
       <div data-name="chesterfield">
-        <p>Chesterfield, Idaho></p>
+        <p>Chesterfield, Idaho</p>
         <p><img src="/web page images/_AAH8784a.jpg" alt="chesterfield id" width="216" height="145" /></p>
         <p>&copy; Roger Heng</p>
       </div>
