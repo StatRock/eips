@@ -7,6 +7,17 @@ img {
    border:1px solid #021a40;
 }
 
+figcaption {
+  margin: 2px;
+}
+
+figure {
+    margin: 0 0 0 10px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 3px;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -95,6 +106,12 @@ td {
   text-align: center;
 }
 
+/* right alignment for blocks, including images with captions */
+
+.align-right {
+  display: block;
+  float: right;
+}
 
 /* horizontal line rules */
 
@@ -131,28 +148,4 @@ hr.double:after {
 hr.blank {
   border-top: 0;
   height: 10px;
-}
-
-/* Rule for division containing an aligned picture, with caption */
-/* Float works at img level but apparently not at div level.*/
-/* caption part had display: block; before I took it out */
-div.align-right-caption {
-  margin:0 5px 5px 0;
-  background:#f5f5f5;
-  border:1px solid #ddd;
-  padding:3px;
-  max-width:100%;
-  height:auto;
-  display:flex;
-  float:right;
-}
-div.align-left-caption {
-  margin:0 5px 5px 0;
-  background:#f5f5f5;
-  border:1px solid #ddd;
-  padding:3px;
-  max-width:100%;
-  height:auto;
-  display:flex;
-  float:left;
 }
