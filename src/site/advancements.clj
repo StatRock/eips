@@ -8,7 +8,7 @@
 
 (defn- advancement-path [file-name]
   (let [path-parts (string/split (normalize-path file-name) #"/")]
-    (str (first path-parts) "/" (second path-parts) "/index.html")))
+    (str (first path-parts) "/" (second path-parts) ".html")))
 
 (deftask advancements
   "Generates advancement pages from the advancement images stored in content/advancements using  templates in templates/advancements.  The output from this task should then be rendered using the default rendering template."

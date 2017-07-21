@@ -8,10 +8,14 @@
 
 (defn strip-content [entries]
   (map #(dissoc % :content) entries))
-
+  
 (defn- advancement-name [file-name]
-  (second (string/split (normalize-path file-name) #"/")))
-
+  (-> file-name
+    (normalize-path)
+    (string/split #"/")
+    (second)
+    (string/replace #".html?$" "")))
+  
 (def ^:private month-abbrs-to-month
   { "feb" "February"
     "mar" "March"
@@ -23,8 +27,8 @@
     "sept" "September"
     "oct" "October"
     "nov" "November"
-    "dec" "December"
-   })
+    "dec" "December"})
+   
 
 (defn- year-abbrs-to-year [year_desc]
   (if (< 1 (count year_desc))
@@ -34,11 +38,11 @@
 
 (defn- advancement-title [advancement-name]
   (let [[_ month & year] (string/split advancement-name #"_")]
-    (str "Images for " (month-abbrs-to-month month) ", " (year-abbrs-to-year year) )))
+    (str "Images for " (month-abbrs-to-month month) ", " (year-abbrs-to-year year))))
 
 (defn render-assortment [{{:keys [path] :as entry} :entry :keys [entries]}]
   (let [processed-entries (strip-content entries)
         advancement {:advancement-title (advancement-name path)
-                     :title             (advancement-title (advancement-name path))
-                     :images            (map #(:path %) entries)}]
+                     :images            (map #(normalize-path (:path %)) entries)
+                     :title             (advancement-title (advancement-name path))}]
     (selmer/render-file "advancement/advancement_indexs.html_template" advancement)))
