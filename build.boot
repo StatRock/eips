@@ -1,14 +1,13 @@
 (set-env!
  :source-paths #{"src" "content" "templates"}
  :dependencies '[[perun "0.4.2-SNAPSHOT"]
-                 [hiccup "1.0.5"]
                  [pandeiro/boot-http "0.7.0"]
                  [adzerk/boot-reload "0.4.12"]
                  [deraen/boot-livereload "0.1.2"]
                  [circleci/clj-yaml "0.5.5"]
                  [selmer "1.0.9"]])
 
-(require '[io.perun :refer :all]
+(require '[io.perun :as perun]
          '[io.perun.meta :as meta]
          '[pandeiro.boot-http :as http]
          '[adzerk.boot-reload :refer [reload]]
@@ -40,17 +39,17 @@
          "Handles default rendering of the EIPS website."
          []
          (comp
-           (mime-type)
-           (build-date)
-           (images-dimensions)
+           (perun/mime-type)
+           (perun/build-date)
+           (perun/images-dimensions)
            ; render 404
-           #_(watermark)
+           #_(perun/watermark)
            (advancements)
            (copy-static-assets)
-           (yaml-metadata :extensions [".html" ".htm"])
-           (markdown)
-           #_(print-meta)                                   ; for debugging.
-           (render :renderer 'site.core/page :out-dir "")))
+           (perun/yaml-metadata :extensions [".html" ".htm"])
+           (perun/markdown)
+           #_(perun/print-meta)                                   ; for debugging.
+           (perun/render :renderer 'site.core/page :out-dir "")))
 
 (deftask build
          "Build the Eastern Idaho Photography Society website, placing built files in the public directory"
