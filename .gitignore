@@ -34,5 +34,11 @@ ehthumbs_vista.db
 # Windows folder config file
 Desktop.ini
 
+# local history from vsCode
+.history
+
 # OSX
 .DS_Store
+
+# aws-credentials should never be committed
+aws-credentials.yaml

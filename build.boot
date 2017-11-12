@@ -5,7 +5,9 @@
                  [adzerk/boot-reload "0.4.12"]
                  [deraen/boot-livereload "0.1.2"]
                  [circleci/clj-yaml "0.5.5"]
-                 [selmer "1.0.9"]])
+                 [selmer "1.0.9"]
+                 [hashobject/boot-s3 "0.1.2-SNAPSHOT"]]
+  :target-path "public")
 
 (require '[io.perun :as perun]
          '[io.perun.meta :as meta]
@@ -14,7 +16,10 @@
          '[site.advancements :refer [advancements]]
          '[boot.core :as boot :refer [deftask]]
          '[deraen.boot-livereload :as lr]
-         '[clojure.string :as string])
+         '[clojure.string :as string]
+         '[clj-yaml.core :as yaml]
+         '[hashobject.boot-s3 :refer [s3-sync]]
+         '[clojure.pprint :as p]) ; pprint is used to print debug statements with (p/pprint thing)
 
 (defn extensions-match
   "Builds regular expressions to filter files based on extension.  The extensions are case
@@ -58,24 +63,37 @@
            (render-website)
            (target :dir #{"public"})))
 
-(deftask deploy
-         "build the Eastern Idaho Photography Society website, and upload it to the server."
+(deftask deploy-test
+         "Build the Eastern Idaho Photography Society website, and upload it to Amazon S3."
+         []
+         (let [credentials (yaml/parse-string (slurp "aws-credentials.yaml"))
+           {:keys [secret-key access-key]} credentials]
+           (comp
+             (build)
+             (s3-sync :bucket "test.eips.net" :source "" :access-key access-key :secret-key secret-key)
+             )))
+
+(deftask deploy-prod
+         "Build the Eastern Idaho Photography Society website, and upload it to Amazon S3."
+         []
+         (let [credentials (yaml/parse-string (slurp "aws-credentials.yaml"))
+               {:keys [secret-key access-key]} credentials]
+            (comp
+              (build)
+              (s3-sync :bucket "eips.net" :source "" :access-key access-key :secret-key secret-key)
+              )))
+
+(deftask dev
+         "live watch of the built website hosted on http://localhost:3000.  Useful to see the results of changes during development."
          []
          (comp
-           (build)
-           #_(sftp)))
-
- (deftask dev
-          "live watch of the built website hosted on http://localhost:3000.  Useful to see the results of changes during development."
-          []
-          (comp
-            (watch :verbose true)
-            (render-website)
-            (target :dir #{"public"})
-            ;for cljs
-            #_(reload)
-            (lr/livereload)     ; doesn't actually reload right now.
-            (http/serve :dir "public")))
+           (watch :verbose true)
+           (render-website)
+           (target :dir #{"public"})
+           ;for cljs
+           #_(reload)
+           (lr/livereload)     ; doesn't actually reload right now.
+           (http/serve :dir "public")))
 
 (deftask serve
          "Serve the website hosted on http://localhost:3000. Keeps the program that displays the website running.  Get out of it with Ctrl C. "
