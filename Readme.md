@@ -174,6 +174,7 @@ awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
 
 ### Useful links
 
+* [EIPS test web URL (direct Amazon URL)](http://test.eips.net.s3-website-us-west-2.amazonaws.com/index.html)
 * [EIPS web URL (direct Amazon URL)](http://eips.net.s3-website-us-west-2.amazonaws.com/index.html)
 * [S3 Storage (see directories--website content and logs)](https://s3.console.aws.amazon.com/s3/home)
 * [CDN (Content Delivery Network), not currently in use](https://console.aws.amazon.com/cloudfront/home?region=us-east-1#)
