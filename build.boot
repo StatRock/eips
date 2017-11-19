@@ -64,7 +64,7 @@
            (target :dir #{"public"})))
 
 (deftask deploy-test
-         "Build the Eastern Idaho Photography Society website, and upload it to Amazon S3."
+         "Build the Eastern Idaho Photography Society website & upload it to a test web site on Amazon S3."
          []
          (let [credentials (yaml/parse-string (slurp "aws-credentials.yaml"))
            {:keys [secret-key access-key]} credentials]
