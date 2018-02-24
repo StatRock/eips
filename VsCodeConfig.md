@@ -25,6 +25,6 @@ You can set your settings in visual studio code by pressing `Ctrl-Shift-P` and t
 
 A couple of optional settings you might want to configure:
 
-* If the markdown preview continually popping up is driving you crazy, add `"instantmarkdown.autoOpenBrowser": false,` to the beginning of the file.
+* If the markdown preview continually popping up is driving you crazy, add `"instantmarkdown.autoOpenBrowser": false,` to the beginning of the file, just inside the first set of {}.
 
 Also, the first time you open this project, Visual Studio Code will recommend that you install a bunch of extensions.  You want them.
