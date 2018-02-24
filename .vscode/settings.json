@@ -1,3 +1,19 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+    "cSpell.words": [
+        "awsdns",
+        "chocolatey",
+        "corpstyle",
+        "eips",
+        "gitignore",
+        "hostmaster",
+        "outfile",
+        "perun",
+        "power",
+        "selmer",
+        "shell",
+        "taskname",
+        "templating",
+        "visualstudiocode"
+    ]
 }
