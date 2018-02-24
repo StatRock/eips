@@ -1,8 +1,10 @@
+# ReadMe
+
 ## Introduction
 
 This directory contains the source code for the [Eastern Idaho Photographic Society's](http://eips.net) website.
 It includes fragments of websites stored in the content directory which are rendered using
-[Perun](https://github.com/hashobject/perun), 
+[Perun](https://github.com/hashobject/perun),
 [Boot](https://github.com/boot-clj/boot),
 and [Selmer](https://github.com/yogthos/Selmer).
 
@@ -33,10 +35,10 @@ For first time setup, see [below](#Initial_Setup).
 
 The build is controlled by [build.boot](./build.boot) which includes the following tasks:
 
-  * `build` - Processes the source code and places the output in the `public` directory.
-  * `deploy-prod` - Executes build and publishes the results to the website.
-  * `deploy-test`- Executes build and publishes the results to the test environment.
-  * `dev` - Processes the source code and hosts it on a local web server.  It will also track built files and rebuild for any changes.  (Though it does not track changes to build.boot).    Press `Ctrl-C` to stop this.
+* `build` - Processes the source code and places the output in the `public` directory.
+* `deploy-prod` - Executes build and publishes the results to the website.
+* `deploy-test`- Executes build and publishes the results to the test environment.
+* `dev` - Processes the source code and hosts it on a local web server.  It will also track built files and rebuild for any changes.  (Though it does not track changes to build.boot).    Press `Ctrl-C` to stop this.
 
 These tasks can be executed from the root project directory with `boot {taskname}`.  For instance,you would use `boot dev` to start the dev watcher.  This will then print a http link (it will look like `Started Jetty on http://localhost:3000`) after which you can browse to [http://localhost:3000](http://localhost:3000) to see a local version of the website. (It may take a while to reach this point, and will print out reams of details about what it is doing.)  Similarly, `boot build` will get it to put the results in the build directory, aka 'public'.
 
@@ -88,7 +90,7 @@ The project has the following directory structure:
 
 * templates - contains the Selmer templates used to render various parts of the website.  Common,   shared content can be found in these templates.
 
-* .gitignore - contains a list of files which should not be included in the source repository.   These files will not have their histories tracked and will not propigate from one computer to   another during git cloning.  Many of these files are incidental.
+* .gitignore - contains a list of files which should not be included in the source repository.   These files will not have their histories tracked and will not propagate from one computer to   another during git cloning.  Many of these files are incidental.
 
 * build.boot - this controls the build process and defines the build tasks.  If a build task doesn't   work, look here first.
 
@@ -171,7 +173,7 @@ ns-1518.awsdns-61.org.
 ### SOA (Start of Authority) name servers
 
 ```
-ns-345.awsdns-43.com. 
+ns-345.awsdns-43.com.
 awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
 ```
 

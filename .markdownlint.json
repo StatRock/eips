@@ -1,0 +1,6 @@
+{
+  "default": true,
+  "header-increment": false,
+  "line-length": false,
+  "no-reversed-links": true
+}
