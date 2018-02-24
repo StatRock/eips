@@ -14,7 +14,7 @@ There are a few reasons for this technology stack
 
   3. Because everything is automated and documented (and links to tutorials are provided), it is easy to pick up, and immediately gain consistent behavior.  Every page will have consistent headers, because the automation ensures it.  This also makes it incredibly simple to add something to the header, as there is only one place to change to update everything.
 
-   The benefits of consistent behavior can't be overstated.  For instance, this makes it simple to ensure that every image on the website has a copyright notice, or has been watermarked.  It also makes it possible to catch for mistakes before publishing. Spell check can be built into the publishing process, ensuring that everything is always spelled correctly on the publicly facing website.
+      The benefits of consistent behavior can't be overstated.  For instance, this makes it simple to ensure that every image on the website has a copyright notice, or has been watermarked.  It also makes it possible to catch for mistakes before publishing. Spell check can be built into the publishing process, ensuring that everything is always spelled correctly on the publicly facing website.
 
   4. Broad tool support - Because most everything is based on simple text files, they can be processed using a wide variety of different tools, from highly specialized tools designed for specific purposes (for instance, to alphabetize a glossary), to generalized tools such as text editors.
 
@@ -24,6 +24,7 @@ You also might want to look at the [glossary](./glossary.md) and the
 [project glossary](./project_glossary.md)
 
 ## Hosting
+
 The website is hosted on AWS S3 in the [eips.net](https://s3.console.aws.amazon.com/s3/buckets/eips.net/?region=us-east-1&tab=overview) S3 bucket.  There is also a test version hosted in the [test.eips.net](https://s3.console.aws.amazon.com/s3/buckets/test.eips.net/?region=us-east-1&tab=overview) S3 bucket.  The contents of these buckets are available on the web at the following links [eips.net](http://eips.net) and [test.eips.net](http://test.eips.net.s3-website-us-west-2.amazonaws.com).
 
 ## Use
@@ -104,10 +105,10 @@ and platforms (such as WordPress) support Markdown as well.
 
 Second, I will note that there are many excellent tools for markdown editing itself, including some WYSIWYGs.  Here is a nice [sampling](https://github.com/karthik/markdown_science/wiki/Tools-to-support-your-markdown-authoring).
 
-
 ## Initial Setup
 
 In order to get this website working, you will first need to install git, and clone the repository.
+
 ```shell
 git clone {repository url}
 ```
@@ -115,16 +116,19 @@ git clone {repository url}
 ### Installing boot
 
 Next, you may need to install boot.  Boot requires the Java JDK to work.  This can be gotten from the [Oracle Java website](https://java.com/en/download/) or from a "package manager":
+
 * for mac: [Homebrew](https://github.com/homebrew/homebrew) - `brew update; brew cask install java`
 * for Linux: [nix](http://nixos.org/nix) - [Instructions](https://blog.flyingcircus.io/2016/05/12/automatic-installation-of-oracle-java/)
 * for Windows: [chocolatey](https://chocolatey.org/) - `choco install jdk8`
 
 Next download Boot and place it somewhere in your path.  On Windows this can be done with:
+
 ```PowerShell
 wget -Uri https://github.com/boot-clj/boot-bin/releases/download/latest/boot.exe -Outfile $env:SystemRoot/boot.exe
 ```
 
 On Mac or Linux, boot is available in (respectively):
+
 * [Homebrew](https://github.com/homebrew/homebrew) - `brew install boot-clj`
 * [nix](http://nixos.org/nix) - `nix-env -i boot`
 
@@ -149,13 +153,12 @@ secret-key: <Secret Access Key>
 
 This file should never *ever* be committed to Git.
 
-
 # AWS information
 
 ### Account Number ()
 
-Amazon Simple Storage Service (S3) [AWS Account: 225203654660] 
- 
+Amazon Simple Storage Service (S3) [AWS Account: 225203654660]
+
 ### Name servers ()
 
 ```
