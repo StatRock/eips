@@ -161,6 +161,10 @@ This file should never *ever* be committed to Git.
 
 Amazon Simple Storage Service (S3) [AWS Account: 225203654660]
 
+### AWS sign-in page
+
+<https://225203654660.signin.aws.amazon.com/console>
+
 ### Name servers ()
 
 ```
