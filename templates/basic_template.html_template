@@ -12,7 +12,7 @@
         content="EIPS,Photography,photoclub,Photoclub,photo club,photography,Photographic,photographic,photographers,Idaho,Idaho Falls,visual art,Eastern Idaho Photographic Society,eips,wildlife,camera,camera club">
 
   <style type="text/css">
-    {{styles}} /* need to deal with presentations.html */
+    {{styles}} 
   </style>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="/css/kickstart.css" media="all" />
@@ -40,7 +40,6 @@
         <h1>Eastern Idaho Photographic Society</h1>
     </div>
     <img src="/image/25-yearss.jpg" width="144" height="90" alt="25 years">
-    </div>
   </div>
 
   <div id="nav-left">
@@ -70,7 +69,7 @@
           <li><a href="/earth_day.html">Earth Day 2005</a></li>
         </ul>
       </li>
-      <li><a href="mailto:mofryer@gmail.com">Contact</a></li>
+      <li><a href="mailto:mofryer@gmail.com">Email Contact</a></li>
     </ul>
   </div>
 
@@ -85,17 +84,8 @@
 
     {% if not no-right-matter %}
     <div id="nav-right" data-selected="{{ nav-right-select }}">
-      <div class="visible" data-name="IndianRaces">
-        <p>&quot;Indian Races,&quot; 2016 October Juried Show, Best of Show</p>
-        <p><img src="/image/indian races_2016_AngieRoach.jpg" width="640" height="360" alt="Indian Races"/></p>
-        <p>&copy; Angie Roach</p>
-      </div>
-      <div data-name="TrimbosPizza">
-        <p>Trimbos Pizza</p>
-        <p><img src="/image/trimbos pizza 6-2017.png" width="487" height="503" alt="Trimbos Pizza"/></p>
-        <p>&copy; Steve Spring, 2017</p>
-      </div>
-        <div data-name="riverssm">
+     <!-- Images from the "web page images" subdirectory -->
+      <div data-name="riverssm">
         <p>&quot;Iverness River,&quot; 2012 October Juried Show, Best of Show</p>
         <p><img src="/web page images/Inverness Riverssm.png" width="400" height="253" alt="Inverness River"/></p>
         <p>&copy; Michael Fryer</p>
@@ -105,32 +95,23 @@
         <p><img src="/web page images/lisasunfl.jpg" alt="first place" width="142" height="216" /></p>
         <p>&copy; Lisa Stephens</p>
       </div>
-      <div data-name="doug">
-        <p>Member on a Field Trip</p>
-        <p><img src="/image2/doug.jpg" alt="photographer" width="133" height="222" /></p>
-        <p>&copy; Doug Jensen</p>
-      </div>
       <div data-name="heng">
         <p>Still Life with Glasses</p>
         <p><img src="/web page images/_RWH1915.jpg" width="500" alt="still life" /></p>
         <p>&copy; Roger Heng</p>
       </div>
-      <!--<div data-name="field-trip">
-        <p>Members on a Field Trip</p>
-        <p><img src="/old files new web/image2/photographers.jpg" alt="photographers" width="350" height="242" /></p>
-      </div>-->
       <div data-name="chesterfield">
         <p>Chesterfield, Idaho</p>
         <p><img src="/web page images/_AAH8784a.jpg" alt="chesterfield id" width="216" height="145" /></p>
         <p>&copy; Roger Heng</p>
       </div>
       <div data-name="bridge-nowhere">
-        <p>High Dynamic Range (HDR) with Bridge to Nowhere<p>
+        <p>High Dynamic Range (HDR) with Bridge to Nowhere</p>
         <p><img src="/web page images/Bridge to Nowhere.jpg" alt="bridge" width="216" height="145" /></p>
         <p>&copy; Michael Fryer</p>
       </div>
       <div data-name="mount_baker">
-        <p>&quot;Mount Baker,&quot; 2011 October Juried Show, Third Place<p>
+        <p>&quot;Mount Baker,&quot; 2011 October Juried Show, Third Place</p>
         <p><img src="/web page images/mount_bakersm.jpg" alt="mt baker" width="400" height="232" /></p>
         <p>&copy; Michael Fryer</p>
       </div>
@@ -138,11 +119,6 @@
         <p>Member on Field Trip, 2012</p>
         <p><img src="/web page images/DSC_9186.JPG" alt="member" width="150" height="206" /></p>
         <p>&copy; Nelson Sibulo</p>
-      </div>
-      <div data-name="john-waterfall">
-        <p>Waterfall Along Columbia River</p>
-        <p><img src="/linkimages/john_waterfall.jpg" alt="john_waterfall" width="346" height="226" /></p>
-        <p>&copy; John Beach</p>
       </div>
       <div data-name="shannon-advancement">
         <p>Cat, 2011</p>
@@ -153,20 +129,10 @@
         <p>Photographing Wildlife</p>
         <p><img src="/web page images/bill.jpg" width="200" height="107" alt="bill" /></p>
       </div>
-      <div data-name="india">
-        <p>&quot;India,&quot; 2011 October Juried Show, Best of Show</p>
-        <p><img src="/image/India 2011-6 115 sm.png" width="387" height="269" alt="best of show" /></p>
-        <p>&copy; Roger Boe</p>
-      </div>
       <div data-name="show2009">
         <p>&quot;Hood,&quot; 2009 October Juried Show, Best of Show</p>
         <p><img src="/web page images/Best of Show2.jpg" alt="hood" width="320" height="400" /></p>
         <p>&copy; Michael Fryer</p>
-      </div>
-      <div data-name="doors">
-        <p>Doors</p>
-        <p><img src="/image adv/doors2.jpg" alt="doors" width="216" height="205" /></p>
-        <p>&copy; Steve Spring</p>
       </div>
       <div data-name="paint">
         <p>Paint with Light Workshop, 2011</p>
@@ -180,7 +146,7 @@
       </div>
       <div data-name="lighthouse">
         <p>Yaquina Lighthouse, 2008</p>
-        <p><img src="/web page images/9135 yaquina lilghthouse vertical.jpg" alt="lighthouse" width="187" height="288" /></p>
+        <p><img src="/web page images/9135 yaquina lighthouse vertical.jpg" alt="lighthouse" width="187" height="288" /></p>
         <p> &copy; Sue Heng</p>
       </div>
       <div data-name="mammoth-falls">
@@ -193,24 +159,56 @@
         <p><img src="/web page images/craters select 015.jpg" alt="craters" width="450" height="315" /></p>
         <p>&copy; Roger Boe</p>
       </div>
+      <div data-name="john-waterfall">
+        <p>Waterfall Along Columbia River</p>
+        <p><img src="/web page images/john_waterfall.jpg" alt="john_waterfall" width="346" height="226" /></p>
+        <p>&copy; John Beach</p>
+      </div>
+      <div data-name="doug">
+        <p>Member on a Field Trip</p>
+        <p><img src="/web page images/doug.jpg" alt="photographer" width="133" height="222" /></p>
+        <p>&copy; Doug Jensen</p>
+      </div>
+      <div data-name="doors">
+        <p>Doors</p>
+        <p><img src="/web page images/doors2.jpg" alt="doors" width="216" height="205" /></p>
+        <p>&copy; Steve Spring</p>
+      </div>
+      <!-- Images from the "image" subdirectory -->
+      <div class="visible" data-name="IndianRaces">
+        <p>&quot;Indian Races,&quot; 2016 October Juried Show, Best of Show</p>
+        <p><img src="/image/indian races_2016_AngieRoach.jpg" width="640" height="360" alt="Indian Races"/></p>
+        <p>&copy; Angie Roach</p>
+      </div>
+      <div data-name="TrimbosPizza">
+        <p>Trimbos Pizza</p>
+        <p><img src="/image/trimbos pizza 6-2017.png" width="487" height="503" alt="Trimbos Pizza"/></p>
+        <p>&copy; Steve Spring, 2017</p>
+      </div>
+      <div data-name="india">
+        <p>&quot;India,&quot; 2011 October Juried Show, Best of Show</p>
+        <p><img src="/image/India 2011-6 115 sm.png" width="387" height="269" alt="best of show" /></p>
+        <p>&copy; Roger Boe</p>
+      </div>
+      <!-- Images from other subdirectories -->
       <div data-name="island-park">
         <p>Bridge in Island Park</p>
-        <p><img src="/blm_forest_nat_parks/targhee_image/DSC_2146.jpg" width="300" height="200" alt="Island Park Bridage" /></p>
+        <p><img src="/blm_forest_nat_parks/targhee_image/DSC_2146.jpg" width="300" height="200" alt="Island Park Bridge" /></p>
         <p>&copy; Roger Heng</p>
       </div>
-      <div data-name="boe">
-        <p>&quot;Kung Fu,&quot; 2010 October Juried Show, Best of Show</p>
-        <p><img src="/member%20images/imagesboe/croped2010.jpg" alt="kung fu" width="294" height="271" /></p>
-        <p>&copy; Roger Boe</p>
+      <div data-name="barn">
+        <p>Member on a Field Trip</p>
+        <p><img src="/field_trips/barns/imagesbarns/1002b.jpg" alt="photographer" width="224" height="288" /></p>
       </div>
       <div data-name="ruin-of0cagsaua">
         <p>Ruin of Cagsaua, Philippines, 2011</p>
         <p><img src="/member images/nelson_images/Ruin of Cagsaua- Philippines.JPG" alt="Ruin of Cagsaua- Philippines" width="450" height="280" /></p>
         <p>&copy; Nelson Sibulo</p>
       </div>
-      <div data-name="barn">
-        <p>Member on a Field Trip</p>
-        <p><img src="/field_trips/barns/imagesbarns/1002b.jpg" alt="photographer" width="224" height="288" /></p>
+      <div data-name="boe">
+        <p>&quot;Kung Fu,&quot; 2010 October Juried Show, Best of Show</p>
+        <p><img src="/member images/imagesboe/cropped2010.jpg" alt="kung fu" width="294" height="271" /></p>
+        <p>&copy; Roger Boe</p>
       </div>
     </div>
     {% endif %}
