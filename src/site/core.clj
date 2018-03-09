@@ -53,8 +53,8 @@
     (selmer/render-file template-file data)))
 
 (def key-transforms
-  "These are transformations that will be applied to certian keys for certain templates before rendering.
-  Note: because of how selmer currently memorizes templates, the targets of includes must be known at compile time and cannot be determined based on data.  Because of that, we are including the rendering in the data transform."
+  "These are transformations that will be applied to certain keys for certain templates before rendering.
+  Note: because of how Selmer currently 'memoizes' (stores for future use) templates, the 'targets of includes' (things that will be assembled together in some output) must be known at compile time and cannot be determined based on data.  Because of that, we are including the rendering in the data transform."
   {"basic_template" (fn [data] (-> data
                                  (update-in [:header-image] #(do-render (str "header_images/" (to-template-file-name %)) data))))})
 
