@@ -35,9 +35,6 @@
         "minhthai.vscode-todo-parser",
         "wayou.vscode-todo-highlight",
         "anseki.vscode-color",
-        "GrapeCity.gc-excelviewer",
-        "xyz.local-history",
-        "rebornix.Ruby",
-        "Ikuyadeu.r"
+        "xyz.local-history"
     ]
 }
