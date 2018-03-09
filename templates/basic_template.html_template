@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <title>{{title|title}}</title>
-  <!-- if {{no-image-index}}
-  <meta name="robots" content="noimageindex"/>
+  <!--The following, commented out, relates to indexing of images for Google image searches
+   if {{no-image-index}}
+    <meta name="robots" content="noimageindex"/>
   -->
   <meta charset="utf-8">
   <meta name="description"
