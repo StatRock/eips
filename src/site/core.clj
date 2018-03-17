@@ -68,10 +68,10 @@
 
 (defn- enforce-only-permitted-keys
   "In order to protect against mispelling of metadata keys, this check ensures that the render is aware of all the metadata keys used.  If this causes a failure on a key that isn't the result of a spelling error, please add that key to the appropriate list above."
-  [data permitted]
+  [data permitted template]
   (let [unexpected-keys (set/difference (set (keys data)) permitted)]
     (if-not (empty? unexpected-keys)
-      (u/fail (str "site.core/enforce-only-permitted-keys: Unknown metadata keys (spelling error?) in '" (:path data) "': " unexpected-keys "\n")))))
+      (u/fail (str "site.core/enforce-only-permitted-keys: Unknown metadata keys (spelling or case error?) in '" (:path data) "' using template: '" template "': " unexpected-keys "\n  Possible values: " permitted "\n")))))
 
 ; template rendering functions
 
@@ -84,13 +84,13 @@
         data-transformer (or (get key-transforms template) identity)
         updated-data (data-transformer data)]
     (enforce-has-keys data required-keys)
-    (enforce-only-permitted-keys data permitted-keys)
+    (enforce-only-permitted-keys data permitted-keys template)
     (do-render template-file updated-data)))
 
 (defn no-template
   "Handles rendering for pages that are compete by themselves."
   [data]
-  (enforce-only-permitted-keys data (set/union perun-keys (keys yaml-defaults)))
+  (enforce-only-permitted-keys data (set/union perun-keys (keys yaml-defaults)) :none)
   (:content data))
 
 ; template routing function.
