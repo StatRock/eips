@@ -1,5 +1,6 @@
 body {
-  margin-left: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 img {
@@ -42,7 +43,7 @@ figure {
 .content h2, .content h3,
 .content h4, .content h5,
 .content h6, .content li,
-.content ul.text,
+.content ul,
 #nav-bottom {
   max-width: 640px;
 }
@@ -73,6 +74,10 @@ figure {
 }
 
 /* responsive grids */
+ul.layout-grid,
+ul.photo-grid {
+  max-width: 100%;
+}
 
 .layout-grid,
 .photo-grid {
@@ -149,4 +154,10 @@ hr.double:after {
 hr.blank {
   border-top: 0;
   height: 10px;
+}
+
+
+.full {
+  width: 100%;
+  height: 100%;
 }
