@@ -19,6 +19,11 @@ You can set your settings in visual studio code by pressing `Ctrl-Shift-P` and t
     "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.quickSuggestions": false
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.history": true
     }
 }
 ```
