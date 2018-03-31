@@ -17,7 +17,7 @@ title: {{advancement-title}}
   -->
 <div align="center">
   <h2>{{title}}</h2>
-  <ul class="layout-grid">
+  <ul class="photo-grid">
     {% for image in images %}
       <li><a href="/{{image}}">
         <img src="/{{image}}" width="150" border="0"></a></li>
