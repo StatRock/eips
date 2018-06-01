@@ -43,6 +43,10 @@ p, h1, h2, h3, h4, h5, h6, li, ul, #nav-bottom {
   max-width: 640px;
 }
 
+.wide {
+  max-width: 100%;
+}
+
 #nav-bottom h2 {
   font-size: 1.15em;
 }
@@ -158,6 +162,14 @@ hr.blank {
   height: 10px;
 }
 
+.position-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fit-content {
+  width: fit-content;
+}
 
 .full {
   width: 100%;

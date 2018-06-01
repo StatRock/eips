@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <div class="header" >
+  <div class="header position-center" >
     <img src="/image/adveipslogos.jpg" width="144" height="90" alt="eips logo">
     <div>
         <h1>Eastern Idaho Photographic Society</h1>
@@ -75,11 +75,34 @@
   </div>
 
   <div class="side-by-side">
-
-    <div>
-      {{header-image|safe}}
+    <div class="position-center">
+      <div class="position-center fit-content">
+        {{header-image|safe}}
+      </div>
       <div class="content">
         {{content|safe}}
+      </div>
+      
+      <div id="nav-bottom" class="position-center">
+        <hr class="short" />
+        <h2>Photo Locations and Other Links</h2>
+        <p><a href="/blm_forest_nat_parks/park_forest_blm.html">National Parks, Forests, Monuments &amp; Reserves</a> |
+            <a href="/blm_forest_nat_parks/blm.html">Bureau of Land Management</a> |
+            <a href="/ghost_town.html">Nearby Ghost Towns</a> |
+            <a href="/refuges.html">Nearby Wildlife Refuges</a> |
+            <a href="/weather.html">Weather</a> |
+            <a href="https://www.timeanddate.com/sun/usa/idaho-falls"> Sunrise/Sunset Times</a> |
+            <a href="/map.html">GPS links</a> | 
+            <a href="/photographer_link.html">Photographers/Photo Clubs</a></p>
+        <p>
+          <a href="https://www.facebook.com/pages/Eastern-Idaho-Photographic-Society/387594054672132"><img src="/sponsor_images/FB.png" width="50" height="50" alt="face book"> Like us on Facebook</a>
+        </p>
+        <p>Photographs Copyright&copy; Photographer, Owner, or Eastern Idaho Photographic Society. Photographs may not be reproduced in any manner without written permission.</p>
+        <p>Web Page Copyright&copy; 2011-2018 Eastern Idaho Photographic Society.</p>
+        <div><a href="http://www.digits.com/"></a>
+          <a href="http://www.digits.com/" target="_blank"></a></div>
+        <a href="http://www.digits.com/" target="_blank"></a>
+        <p align="left"><a href="http://www.mobile-barcodes.com/"></a></p>
       </div>
     </div>
 
@@ -212,29 +235,7 @@
         <p>&copy; Roger Boe</p>
       </div>
     </div>
-    {% endif %}
-  </div>
-
-  <div id="nav-bottom">
-    <hr class="short" />
-    <h2>Photo Locations and Other Links</h2>
-    <p><a href="/blm_forest_nat_parks/park_forest_blm.html">National Parks, Forests, Monuments &amp; Reserves</a> |
-        <a href="/blm_forest_nat_parks/blm.html">Bureau of Land Management</a> |
-        <a href="/ghost_town.html">Nearby Ghost Towns</a> |
-        <a href="/refuges.html">Nearby Wildlife Refuges</a> |
-        <a href="/weather.html">Weather</a> |
-        <a href="https://www.timeanddate.com/sun/usa/idaho-falls"> Sunrise/Sunset Times</a> |
-        <a href="/map.html">GPS links</a> | 
-        <a href="/photographer_link.html">Photographers/Photo Clubs</a></p>
-    <p>
-      <a href="https://www.facebook.com/pages/Eastern-Idaho-Photographic-Society/387594054672132"><img src="/sponsor_images/FB.png" width="50" height="50" alt="face book"> Like us on Facebook</a>
-    </p>
-    <p>Photographs Copyright&copy; Photographer, Owner, or Eastern Idaho Photographic Society. Photographs may not be reproduced in any manner without written permission.</p>
-    <p>Web Page Copyright&copy; 2011-2018 Eastern Idaho Photographic Society.</p>
-    <div><a href="http://www.digits.com/"></a>
-      <a href="http://www.digits.com/" target="_blank"></a></div>
-    <a href="http://www.digits.com/" target="_blank"></a>
-    <p align="left"><a href="http://www.mobile-barcodes.com/"></a></p>
+    {% endif %}    
   </div>
 
 </body>
