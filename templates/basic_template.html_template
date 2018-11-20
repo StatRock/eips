@@ -109,9 +109,15 @@
     {% if not no-right-matter %}
     <div id="nav-right" data-selected="{{ nav-right-select }}">
      <!-- Images from the "web page images" subdirectory -->
+      <div data-name="TAMcollective2018">
+        <p>A Peek at EIPS Pictures in the 2018 "Collective" Exhibit <br>
+            at the Art Museum of Eastern Idaho </p>
+        <p><img src="/web page images/TAMcollective2018.jpg" width="400" height="253" alt="TAMS Collective 2018"/></p>
+        <p>&copy; Michael Bernard, 2018</p>
+      </div>
       <div data-name="riverssm">
         <p>&quot;Iverness River,&quot; 2012 October Juried Show, Best of Show</p>
-        <p><img src="/web page images/Inverness Riverssm.png" width="400" height="253" alt="Inverness River"/></p>
+        <p><img src="/web page images/Inverness Riverssm.png" width="482" height="360" alt="Inverness River"/></p>
         <p>&copy; Michael Fryer</p>
       </div>
       <div data-name="lisasunfl">
