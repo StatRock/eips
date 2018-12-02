@@ -46,6 +46,7 @@
   <div id="nav-left">
     <ul class="menu">
       <li><a href="/index.html">Home</a></li>
+      <li><a href="/EIPScalendar.html">Calendar</a></li>
       <li><a href="/meet.html">Meetings</a>
         <ul>
           <li><a href="/presentations.html">Presentations</a></li>
@@ -61,7 +62,7 @@
         </ul>
       </li>
       <li><a href="/member_info.html">Membership</a></li>
-      <li><a href="/member_images.html">Member Photographs</a></li>
+      <li><a href="/member_images.html">Member Photos</a></li>
       <li><a href="/Archives.html">Archives</a>
         <ul>
           <li><a href="/if mag contest.html">Idaho Falls Magazine Contest, 2014-2016</a></li>
@@ -70,7 +71,7 @@
           <li><a href="/earth_day.html">Earth Day 2005</a></li>
         </ul>
       </li>
-      <li><a href="mailto:mofryer@gmail.com">Email Contact</a></li>
+      <li><a href="mailto:mofryer@gmail.com">Email Us</a></li>
     </ul>
   </div>
 
