@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <div class="header position-center" >
+  <div class="header position-center">
     <img src="/image/adveipslogos.jpg" width="144" height="90" alt="eips logo">
     <div>
         <h1>Eastern Idaho Photographic Society</h1>
@@ -51,7 +51,7 @@
         <ul>
           <li><a href="/presentations.html">Presentations</a></li>
           <li><a href="/workshop.html">Workshops</a></li>
-          <li><a href="/critique_program.html">Critiques</a></li>
+          <li><a href="/program2018.html">Critiques</a></li>
         </ul>
       </li>
       <li><a href="/Activities.html">Activities</a>
